@@ -1,7 +1,6 @@
 from calendar_api import CalendarAPI
 from match_to_event import MatchToEvent
 from scraper import Scraper
-import pytz
 
 scraper = Scraper()
 calendar = CalendarAPI()

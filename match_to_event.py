@@ -1,10 +1,10 @@
 from datetime import timedelta
+from idutils import IDUtils
 from match import MatchInfo
-from unidecode import unidecode
 
 class MatchToEvent:
     def __get_id(self, match: MatchInfo):
-        return unidecode(f'{match.isHome}{match.opponent}{match.competition}'.replace(' ', '')).lower()
+        return IDUtils.generateID(match.isHome, match.opponent, match.competition)
 
     def __get_summary(self, match: MatchInfo):
         return self.__get_teams(match)
