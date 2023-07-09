@@ -11,19 +11,23 @@ class Scraper:
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
         }
 
-    def __get_column_text(self, row, column_name: str) -> str:
+    def __get_td_text(self, row, column_name: str) -> str:
         return row.find("td", class_=column_name).get_text().strip()
 
+    def __get_td_title(self, row, column_name: str) -> str:
+        return row.find("td", class_=column_name).find("a").get("title")
+
     def __get_match_info(self, row):
-            date = self.__get_column_text(row, "full-date")
-            time = self.__get_column_text(row, "score-time")
-            competition = self.__get_column_text(row, "competition")
-            home = self.__get_column_text(row, "team-a")
-            away = self.__get_column_text(row, "team-b")
+            date = self.__get_td_text(row, "full-date")
+            time = self.__get_td_text(row, "score-time")
+            competition = self.__get_td_title(row, "competition")
+            home = self.__get_td_text(row, "team-a")
+            away = self.__get_td_text(row, "team-b")
             if (DateUtils.is_valid_time(time)):
                 if home != self.team and away != self.team:
                     raise Exception(f"Favorite team ({self.team}) isn't {home} nor {away}")
                 return MatchInfo(
+                    team = self.team,
                     datetime = DateUtils.get_local_datetime(date, time),
                     competition = competition,
                     isHome = self.team==home,
