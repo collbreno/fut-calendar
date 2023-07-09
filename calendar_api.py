@@ -40,7 +40,7 @@ class CalendarAPI:
 
         try:
             service = build('calendar', 'v3', credentials=self.creds)
-            result = service.events().insert(calendarId='primary', body=event).execute()
+            result = service.events().update(eventId=event['id'],calendarId='primary', body=event).execute()
             print('Event created', result.get('htmlLink'))
 
         except HttpError as error:
