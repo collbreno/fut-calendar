@@ -13,7 +13,8 @@ SCOPES = ['https://www.googleapis.com/auth/calendar.events']
 
 
 class CalendarAPI:
-    def __init__(self) -> None:
+    def __init__(self, calendar_id) -> None:
+        self.calendar_id = calendar_id
         self.creds = None
         # The file token.json stores the user's access and refresh tokens, and is
         # created automatically when the authorization flow completes for the first
@@ -40,7 +41,7 @@ class CalendarAPI:
 
         try:
             service = build('calendar', 'v3', credentials=self.creds)
-            result = service.events().update(eventId=event['id'],calendarId='primary', body=event).execute()
+            result = service.events().insert(calendarId=self.calendar_id, body=event).execute()
             print('Event created', result.get('htmlLink'))
 
         except HttpError as error:

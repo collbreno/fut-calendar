@@ -4,9 +4,9 @@ from dateutils import DateUtils
 from match import MatchInfo
 
 class Scraper:
-    def __init__(self) -> None:
-        self.team = "Fluminense"
-        self.url = "https://br.soccerway.com/teams/brazil/fluminense-football-club/312/matches/"
+    def __init__(self, team, url) -> None:
+        self.team = team
+        self.url = url
         self.headers = {
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
         }
