@@ -5,11 +5,10 @@ import json
 
 file = open('./settings.json')
 data = json.load(file)
-team = data['team']
 matches_url = data['matches_url']
 calendar_id = data['calendar_id']
 
-matches_scraper = MatchesScraper(team=team, url=matches_url)
+matches_scraper = MatchesScraper(url=matches_url)
 calendar = CalendarAPI(calendar_id=calendar_id)
 conversor = MatchToEvent()
 

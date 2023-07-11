@@ -5,8 +5,7 @@ from dateutils import DateUtils
 from match import MatchInfo
 
 class MatchesScraper:
-    def __init__(self, team, url) -> None:
-        self.team = team
+    def __init__(self, url) -> None:
         self.url = url
         self.headers = {
             "user-agent": USER_AGENT
@@ -25,14 +24,11 @@ class MatchesScraper:
             home = self.__get_td_text(row, "team-a")
             away = self.__get_td_text(row, "team-b")
             if (DateUtils.is_valid_time(time)):
-                if home != self.team and away != self.team:
-                    raise Exception(f"Favorite team ({self.team}) isn't {home} nor {away}")
                 return MatchInfo(
-                    team = self.team,
+                    home = home,
+                    away = away,
                     datetime = DateUtils.get_local_datetime(date, time),
                     competition = competition,
-                    isHome = self.team==home,
-                    opponent = away if self.team == home else home,
                 )
 
     def get_scheduled_matches(self):

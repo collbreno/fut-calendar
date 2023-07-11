@@ -3,8 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class MatchInfo:
-    team: str
+    home: str
+    away: str
     datetime: datetime
     competition: str
-    opponent: str
-    isHome: bool

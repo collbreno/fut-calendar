@@ -4,15 +4,13 @@ from match import MatchInfo
 
 class MatchToEvent:
     def __get_id(self, match: MatchInfo):
-        return IDUtils.generateID(match.isHome, match.opponent, match.competition)
+        return IDUtils.generateID(match.home, match.away, match.competition, match.datetime.year)
 
     def __get_summary(self, match: MatchInfo):
         return self.__get_teams(match)
 
     def __get_teams(self, match: MatchInfo):
-        home = match.team if match.isHome else match.opponent
-        away = match.opponent if match.isHome else match.team
-        return f'{home} x {away}'
+        return f'{match.home} x {match.away}'
 
     def __get_description(self, match: MatchInfo):
         return f'{self.__get_teams(match)}\n{match.competition}'
