@@ -1,14 +1,15 @@
 from bs4 import BeautifulSoup
 import requests
+from constants import USER_AGENT
 from dateutils import DateUtils
 from match import MatchInfo
 
-class Scraper:
+class MatchesScraper:
     def __init__(self, team, url) -> None:
         self.team = team
         self.url = url
         self.headers = {
-            "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+            "user-agent": USER_AGENT
         }
 
     def __get_td_text(self, row, column_name: str) -> str:
