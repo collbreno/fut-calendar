@@ -2,6 +2,9 @@
 token.json
 credentials.json
 
+# Local settings folder
+teams/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

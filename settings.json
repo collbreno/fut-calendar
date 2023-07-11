@@ -1,0 +1,7 @@
+{
+    //the name of the team, should be exactly the same as in the matches list from soccerway
+    "team": "Fluminense",
+    //the url from soccerway that contains all the matches
+    "matches_url": "https://br.soccerway.com/teams/brazil/fluminense-football-club/312/matches/",
+    "calendar_id": "primary"
+}
