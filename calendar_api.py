@@ -9,12 +9,11 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # If modifying these scopes, delete the file token.json.
-SCOPES = ['https://www.googleapis.com/auth/calendar.events']
+SCOPES = ['https://www.googleapis.com/auth/calendar']
 
 
 class CalendarAPI:
-    def __init__(self, calendar_id) -> None:
-        self.calendar_id = calendar_id
+    def __init__(self) -> None:
         self.creds = None
         # The file token.json stores the user's access and refresh tokens, and is
         # created automatically when the authorization flow completes for the first
@@ -34,27 +33,19 @@ class CalendarAPI:
                 token.write(self.creds.to_json())
 
 
-    def __insert(self, event):
-        """Shows basic usage of the Google Calendar API.
-        Prints the start and name of the next 10 events on the user's calendar.
-        """
-
+    def __insert(self, calendar_id, event):
         try:
             service = build('calendar', 'v3', credentials=self.creds)
-            result = service.events().insert(calendarId=self.calendar_id, body=event).execute()
+            result = service.events().insert(calendarId=calendar_id, body=event).execute()
             print('Event created', result.get('htmlLink'))
 
         except HttpError as error:
             print('An error occurred: %s' % error)
     
-    def upsert(self, event):
-        """Shows basic usage of the Google Calendar API.
-        Prints the start and name of the next 10 events on the user's calendar.
-        """
-
+    def upsert(self, calendar_id, event):
         try:
             service = build('calendar', 'v3', credentials=self.creds)
-            result = service.events().update(eventId=event['id'], calendarId=self.calendar_id, body=event).execute()
+            result = service.events().update(eventId=event['id'], calendarId=calendar_id, body=event).execute()
             print('Event updated', result.get('htmlLink'))
 
         except HttpError as error:
@@ -62,3 +53,13 @@ class CalendarAPI:
                 self.__insert(event)
             else:
                 print('An error occurred: %s' % error)
+
+    def create_calendar(self, calendar):
+        try:
+            service = build('calendar', 'v3', credentials=self.creds)
+            result = service.calendars().insert(body=calendar).execute()
+            print('Calendar created', result.get('summary'))
+            return result.get('id')
+
+        except HttpError as error:
+            print('An error occurred: %s' % error)

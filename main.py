@@ -9,8 +9,8 @@ matches_url = data['matches_url']
 calendar_id = data['calendar_id']
 
 matches_scraper = MatchesScraper(url=matches_url)
-calendar = CalendarAPI(calendar_id=calendar_id)
+calendar = CalendarAPI()
 conversor = MatchToEvent()
 
 for match in matches_scraper.get_scheduled_matches():
-    calendar.upsert(conversor.convert(match))
+    calendar.upsert(calendar_id, conversor.convert(match))

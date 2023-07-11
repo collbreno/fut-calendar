@@ -1,4 +1,5 @@
 from datetime import timedelta
+from constants import TIME_ZONE
 from idutils import IDUtils
 from match import MatchInfo
 
@@ -18,7 +19,7 @@ class MatchToEvent:
     def __get_datetime(self, datetime):
         return {
             'dateTime': datetime.isoformat(),
-            'timeZone': 'America/Sao_Paulo'
+            'timeZone': TIME_ZONE
         }
 
     def __get_location(self, match):

@@ -4,6 +4,7 @@ credentials.json
 
 # Local settings folder
 teams/
+teams.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
