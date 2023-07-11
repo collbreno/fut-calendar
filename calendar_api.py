@@ -34,7 +34,7 @@ class CalendarAPI:
                 token.write(self.creds.to_json())
 
 
-    def create(self, event):
+    def __insert(self, event):
         """Shows basic usage of the Google Calendar API.
         Prints the start and name of the next 10 events on the user's calendar.
         """
@@ -46,3 +46,19 @@ class CalendarAPI:
 
         except HttpError as error:
             print('An error occurred: %s' % error)
+    
+    def upsert(self, event):
+        """Shows basic usage of the Google Calendar API.
+        Prints the start and name of the next 10 events on the user's calendar.
+        """
+
+        try:
+            service = build('calendar', 'v3', credentials=self.creds)
+            result = service.events().update(eventId=event['id'], calendarId=self.calendar_id, body=event).execute()
+            print('Event updated', result.get('htmlLink'))
+
+        except HttpError as error:
+            if error.status_code == 404:
+                self.__insert(event)
+            else:
+                print('An error occurred: %s' % error)

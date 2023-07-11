@@ -14,4 +14,4 @@ calendar = CalendarAPI(calendar_id=calendar_id)
 conversor = MatchToEvent()
 
 for match in scraper.get_scheduled_matches():
-    calendar.create(conversor.convert(match))
+    calendar.upsert(conversor.convert(match))
