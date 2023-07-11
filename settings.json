@@ -1,7 +1,8 @@
 {
-    //the name of the team, should be exactly the same as in the matches list from soccerway
+    //the name of the team, should be exactly the same as in the matches list from soccerway.
     "team": "Fluminense",
-    //the url from soccerway that contains all the matches
+    //the url from soccerway that contains all the matches of the team.
     "matches_url": "https://br.soccerway.com/teams/brazil/fluminense-football-club/312/matches/",
+    //the id of the google calendar. leave as "primary" if you're not sure.
     "calendar_id": "primary"
 }
