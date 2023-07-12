@@ -31,6 +31,7 @@ if __name__ == '__main__':
                 print(f'Creating settings for {team}...')
                 calendar = mount_calendar(f'Jogos {team}')
                 data['calendar_id'] = calendar_api.create_calendar(calendar)
+                calendar_api.make_public(data['calendar_id'])
 
                 json_object = json.dumps(data)
 

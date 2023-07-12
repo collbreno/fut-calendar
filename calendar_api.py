@@ -54,6 +54,21 @@ class CalendarAPI:
             else:
                 print('An error occurred: %s' % error)
 
+    def make_public(self, calendar_id):
+        try:
+            service = build('calendar', 'v3', credentials=self.creds)
+            rule = {
+                'scope': {
+                    'type': 'default'
+                },
+                'role': 'reader'
+            }
+            service.acl().insert(calendarId=calendar_id, body=rule).execute()
+            print(f'Calendar {calendar_id} now is public!')
+
+        except HttpError as error:
+            print('An error occurred: %s' % error)
+
     def create_calendar(self, calendar):
         try:
             service = build('calendar', 'v3', credentials=self.creds)
