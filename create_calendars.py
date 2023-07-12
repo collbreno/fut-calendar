@@ -1,6 +1,6 @@
 import json
 from calendar_api import CalendarAPI
-from constants import TIME_ZONE
+from constants import TIME_ZONE, WOMEN_FLAG
 from team_scraper import TeamScraper
 from unidecode import unidecode
 import os
@@ -23,6 +23,11 @@ if __name__ == '__main__':
         for team_url in file:
             data = scraper.get_info(team_url)
             team = data['team']
+            
+            if ('women' in team_url):
+                team = f'{team} {WOMEN_FLAG}'
+                data['flag'] = WOMEN_FLAG
+
             json_filename = format_filename(team)
 
             if os.path.exists(f'{folder}{json_filename}'):

@@ -7,3 +7,4 @@ class MatchInfo:
     away: str
     datetime: datetime
     competition: str
+    flag: str = ''

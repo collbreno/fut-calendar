@@ -5,8 +5,9 @@ from dateutils import DateUtils
 from match import MatchInfo
 
 class MatchesScraper:
-    def __init__(self, url) -> None:
+    def __init__(self, url, flag) -> None:
         self.url = url
+        self.flag = flag
         self.headers = {
             "user-agent": USER_AGENT
         }
@@ -29,6 +30,7 @@ class MatchesScraper:
                     away = away,
                     datetime = DateUtils.get_local_datetime(date, time),
                     competition = competition,
+                    flag = self.flag,
                 )
 
     def get_scheduled_matches(self):

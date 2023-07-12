@@ -8,13 +8,13 @@ class MatchToEvent:
         return IDUtils.generateID(match.home, match.away, match.competition, match.datetime.year)
 
     def __get_summary(self, match: MatchInfo):
-        return self.__get_teams(match)
-
-    def __get_teams(self, match: MatchInfo):
-        return f'{match.home} x {match.away}'
+        teams = f'{match.home} x {match.away}'
+        if match.flag != '':
+            teams += f' ({match.flag})'
+        return teams
 
     def __get_description(self, match: MatchInfo):
-        return f'{self.__get_teams(match)}\n{match.competition}'
+        return match.competition
 
     def __get_datetime(self, datetime):
         return {

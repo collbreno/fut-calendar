@@ -14,8 +14,9 @@ if __name__ == '__main__':
     data = json.load(file)
     matches_url = data['matches_url']
     calendar_id = data['calendar_id']
+    flag = data.get('flag', '')
 
-    matches_scraper = MatchesScraper(url=matches_url)
+    matches_scraper = MatchesScraper(url=matches_url, flag=flag)
     calendar = CalendarAPI()
     conversor = MatchToEvent()
 
