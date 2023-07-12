@@ -37,7 +37,7 @@ class CalendarAPI:
         try:
             service = build('calendar', 'v3', credentials=self.creds)
             result = service.events().insert(calendarId=calendar_id, body=event).execute()
-            print('Event created', result.get('htmlLink'))
+            print('Event created', result.get('summary'))
 
         except HttpError as error:
             print('An error occurred: %s' % error)
@@ -46,11 +46,11 @@ class CalendarAPI:
         try:
             service = build('calendar', 'v3', credentials=self.creds)
             result = service.events().update(eventId=event['id'], calendarId=calendar_id, body=event).execute()
-            print('Event updated', result.get('htmlLink'))
+            print('Event updated', result.get('summary'))
 
         except HttpError as error:
             if error.status_code == 404:
-                self.__insert(event)
+                self.__insert(calendar_id, event)
             else:
                 print('An error occurred: %s' % error)
 

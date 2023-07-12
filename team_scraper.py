@@ -15,7 +15,7 @@ class TeamScraper:
         return img_element.get('src')
 
     def __get_matches_url(self, team_url):
-        return team_url+'/matches/'
+        return team_url.strip()+'/matches/'
 
     def __get_team_name(self, soup):
         subheading_element = soup.find('div', id='subheading')
