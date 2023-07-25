@@ -12,5 +12,8 @@ if __name__ == '__main__':
             file = open(fullpath)
             data = json.load(file)
             team = data['team']
+            flag = data.get('flag', '')
+            if flag != '':
+                team += f' {flag}'
             share_url = 'https://calendar.google.com/calendar/u/0/r?cid='+data['calendar_id']
             print(f'[{team}]({share_url})')
