@@ -1,5 +1,5 @@
 from datetime import timedelta
-from constants import TIME_ZONE
+from constants import LOCAL_TIME_ZONE, MATCH_DURATION
 from idutils import IDUtils
 from match import MatchInfo
 
@@ -19,7 +19,7 @@ class MatchToEvent:
     def __get_datetime(self, datetime):
         return {
             'dateTime': datetime.isoformat(),
-            'timeZone': TIME_ZONE
+            'timeZone': LOCAL_TIME_ZONE
         }
 
     def __get_location(self, match):
@@ -31,7 +31,7 @@ class MatchToEvent:
         location = self.__get_location(match)
         description = self.__get_description(match)
         start = self.__get_datetime(match.datetime)
-        end = self.__get_datetime(match.datetime + timedelta(hours=2))
+        end = self.__get_datetime(match.datetime + timedelta(hours=MATCH_DURATION))
 
         return {
             'id': event_id,

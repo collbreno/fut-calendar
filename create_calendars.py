@@ -1,6 +1,6 @@
 import json
 from calendar_api import CalendarAPI
-from constants import TIME_ZONE, WOMEN_FLAG
+from constants import LOCAL_TIME_ZONE, WOMEN_FLAG
 from team_scraper import TeamScraper
 from unidecode import unidecode
 import os
@@ -11,7 +11,7 @@ def format_filename(text: str):
 def mount_calendar(summary: str):
     return {
         'summary': summary,
-        'timeZone': TIME_ZONE
+        'timeZone': LOCAL_TIME_ZONE
     }
 
 if __name__ == '__main__':
