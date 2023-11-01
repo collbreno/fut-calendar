@@ -34,25 +34,23 @@ class CalendarAPI:
 
 
     def __insert(self, calendar_id, event):
-        try:
-            service = build('calendar', 'v3', credentials=self.creds)
-            result = service.events().insert(calendarId=calendar_id, body=event).execute()
-            print('Event created:', result.get('summary'))
+        service = build('calendar', 'v3', credentials=self.creds)
+        result = service.events().insert(calendarId=calendar_id, body=event).execute()
+        print('Event created:', result.get('summary'))
 
-        except HttpError as error:
-            print('An error occurred: %s' % error)
+    def __update(self, calendar_id, event):
+        service = build('calendar', 'v3', credentials=self.creds)
+        result = service.events().update(eventId=event['id'], calendarId=calendar_id, body=event).execute()
+        print('Event updated', result.get('summary'))
     
     def upsert(self, calendar_id, event):
         try:
-            service = build('calendar', 'v3', credentials=self.creds)
-            result = service.events().update(eventId=event['id'], calendarId=calendar_id, body=event).execute()
-            print('Event updated', result.get('summary'))
-
+            self.__update(calendar_id, event)
         except HttpError as error:
             if error.status_code == 404:
                 self.__insert(calendar_id, event)
             else:
-                print('An error occurred: %s' % error)
+                raise error
 
     def make_public(self, calendar_id):
         try:
