@@ -1,7 +1,7 @@
 import json
 import os
 
-if __name__ == '__main__':
+def print_all():
     folder_path = "teams/"
 
     files = os.listdir(folder_path)
@@ -16,4 +16,4 @@ if __name__ == '__main__':
             if flag != '':
                 team += f' {flag}'
             share_url = 'https://calendar.google.com/calendar/u/0/r?cid='+data['calendar_id']
-            print(f'[{team}]({share_url})')
+            print(f'[{team}]({share_url})\n')

@@ -1,9 +1,9 @@
 import json
 import os
 
-from calendar_api import CalendarAPI
+from services.calendar_api import CalendarAPI
 
-if __name__ == '__main__':
+def make_all_public():
     folder_path = "teams/"
 
     files = os.listdir(folder_path)

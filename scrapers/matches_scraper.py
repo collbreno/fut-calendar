@@ -1,8 +1,9 @@
 from bs4 import BeautifulSoup
 import requests
+
 from constants import USER_AGENT
-from dateutils import DateUtils
-from match import MatchInfo
+from utils.dateutils import DateUtils
+from models.match_info import MatchInfo
 
 class MatchesScraper:
     def __init__(self, url, flag) -> None:

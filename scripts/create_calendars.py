@@ -1,20 +1,20 @@
 import json
-from calendar_api import CalendarAPI
+from services.calendar_api import CalendarAPI
 from constants import LOCAL_TIME_ZONE, WOMEN_FLAG
-from team_scraper import TeamScraper
+from scrapers.team_scraper import TeamScraper
 from unidecode import unidecode
 import os
 
-def format_filename(text: str):
+def __format_filename(text: str):
     return unidecode(text.lower()).replace(' ', '_')+'.json'
 
-def mount_calendar(summary: str):
+def __mount_calendar(summary: str):
     return {
         'summary': summary,
         'timeZone': LOCAL_TIME_ZONE
     }
 
-if __name__ == '__main__':
+def create_all():
     folder = './teams/'
     scraper = TeamScraper()
     calendar_api = CalendarAPI()
@@ -28,13 +28,13 @@ if __name__ == '__main__':
                 team = f'{team} {WOMEN_FLAG}'
                 data['flag'] = WOMEN_FLAG
 
-            json_filename = format_filename(team)
+            json_filename = __format_filename(team)
 
             if os.path.exists(f'{folder}{json_filename}'):
                 print(f'{team} already added.')
             else:
                 print(f'Creating settings for {team}...')
-                calendar = mount_calendar(f'Jogos {team}')
+                calendar = __mount_calendar(f'Jogos {team}')
                 data['calendar_id'] = calendar_api.create_calendar(calendar)
                 calendar_api.make_public(data['calendar_id'])
 

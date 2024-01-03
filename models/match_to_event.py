@@ -1,7 +1,7 @@
 from datetime import timedelta
 from constants import LOCAL_TIME_ZONE, MATCH_DURATION
-from idutils import IDUtils
-from match import MatchInfo
+from utils.idutils import IDUtils
+from models.match_info import MatchInfo
 
 class MatchToEvent:
     def __get_id(self, match: MatchInfo):

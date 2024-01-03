@@ -1,6 +1,6 @@
-from competition_scraper import CompetitionScraper
+from scrapers.competition_scraper import CompetitionScraper
 
-if __name__ == '__main__':
+def get_serie_a():
     url = 'https://br.soccerway.com/national/brazil/serie-a/2023/regular-season/r73825/tables/'
     for team in CompetitionScraper().get_teams(url):
         print(team)

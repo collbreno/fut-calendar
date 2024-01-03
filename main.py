@@ -1,6 +1,6 @@
-from calendar_api import CalendarAPI
-from match_to_event import MatchToEvent
-from matches_scraper import MatchesScraper
+from services.calendar_api import CalendarAPI
+from models.match_to_event import MatchToEvent
+from scrapers.matches_scraper import MatchesScraper
 import json
 import sys
 
