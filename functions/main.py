@@ -77,7 +77,7 @@ def write_to_calendar(event: Event[Change[DocumentSnapshot]]) -> None:
         document = event.data.after.to_dict()
         print(document)
         calendar_api = CalendarAPI(None)
-        calendar_api.insert(calendar_id=calendar_id, event=calendar_event)
+        calendar_api.upsert(calendar_id=calendar_id, event=calendar_event)
     else:
         print('Objeto excluido')
     

@@ -5,7 +5,7 @@ class CalendarAPI:
     def __init__(self, creds) -> None:
         self.service = build('calendar', 'v3', credentials=creds)
 
-    def insert(self, calendar_id, event):
+    def __insert(self, calendar_id, event):
         result = self.service.events().insert(calendarId=calendar_id, body=event).execute()
         print('Event created:', result.get('summary'))
 
@@ -18,7 +18,7 @@ class CalendarAPI:
             self.__update(calendar_id, event)
         except HttpError as error:
             if error.status_code == 404:
-                self.insert(calendar_id, event)
+                self.__insert(calendar_id, event)
             else:
                 raise error
 
