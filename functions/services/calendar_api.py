@@ -2,8 +2,8 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 class CalendarAPI:
-    def __init__(self, creds) -> None:
-        self.service = build('calendar', 'v3', credentials=creds)
+    def __init__(self) -> None:
+        self.service = build('calendar', 'v3')
 
     def __insert(self, calendar_id, event):
         result = self.service.events().insert(calendarId=calendar_id, body=event).execute()
