@@ -21,6 +21,10 @@ class CalendarAPI:
                 self.__insert(calendar_id, event)
             else:
                 raise error
+            
+    def delete(self, calendar_id, event_id):
+        self.service.events().delete(calendarId=calendar_id, eventId=event_id).execute()
+        print('Event deleted', event_id)
 
     def make_public(self, calendar_id):
         rule = {

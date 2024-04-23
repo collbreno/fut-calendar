@@ -1,11 +1,12 @@
 from datetime import timedelta
 from constants import LOCAL_TIME_ZONE, MATCH_DURATION
-from utils.match_utils import MatchUtils
 from models.match import Match
+import re
 
 class MatchConverter:
     def __get_id(self, match: Match):
-        return MatchUtils.generateID(match)
+        pattern = r'[^a-v0-9]'
+        return re.sub(pattern, '', match.id)
 
     def __get_summary(self, match: Match):
         teams = f'{match.home} x {match.away}'

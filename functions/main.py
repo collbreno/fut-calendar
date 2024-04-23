@@ -20,7 +20,6 @@ from services.calendar_api import CalendarAPI
 from services.match_converter import MatchConverter
 from datetime import datetime
 from services.matches_scraper import MatchesScraper
-from utils.match_utils import MatchUtils
 from dataclasses import asdict
 from models.match import Match
 
@@ -49,11 +48,10 @@ def run_scraper(event: Event[Change[DocumentSnapshot]]) -> https_fn.Response:
     scraper = MatchesScraper(soccerway_id=doc['soccerway_id'], flag=doc['flag'])
     matches = list(scraper.get_scheduled_matches())
     for match in matches:
-        match_id = MatchUtils.generateID(match)
-        client.document(f'teams/{team}/matches/{match_id}').set(
+        client.document(f'teams/{team}/matches/{match.id}').set(
             asdict(match)
         )
-        logger.info(f'{tag} set match {match_id}')
+        logger.info(f'{tag} set match {match.id} ({match.home} x {match.away})')
     
 
 @on_document_written(document='teams/{team}/matches/{matchId}')
@@ -69,18 +67,18 @@ def write_to_calendar(event: Event[Change[DocumentSnapshot]]) -> None:
     converter = MatchConverter()
 
     after = event.data.after
+    calendar_api = CalendarAPI()
 
     if after is not None:
         before = event.data.before
         document = after.to_dict()
         if before is None or before.to_dict() != document:
             calendar_event = converter.convert(Match(**document))
-            calendar_api = CalendarAPI()
             calendar_api.upsert(calendar_id=calendar_id, event=calendar_event)
             logger.info(f'{tag} match updated!')
         else:
             logger.debug(f'{tag} match did not changed')
     else:
-        # TODO: implement deletion
-        logger.error('event deletion not implemented')
+        calendar_api.delete(calendar_id=calendar_id, event_id=match_id)
+        logger.debug(f'{tag} match deleted!')
     

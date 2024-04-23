@@ -25,8 +25,10 @@ class MatchesScraper:
             competition = self.__get_td_title(row, "competition")
             home = self.__get_td_text(row, "team-a")
             away = self.__get_td_text(row, "team-b")
+            id = row.get('data-event-id')
             if (DateUtils.is_valid_time(time)):
                 return Match(
+                    id=id,
                     home = home,
                     away = away,
                     datetime = DateUtils.get_local_datetime(date, time),
