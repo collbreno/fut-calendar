@@ -22,6 +22,7 @@ from datetime import datetime
 from services.matches_scraper import MatchesScraper
 from dataclasses import asdict
 from models.match import Match
+from utils.calendar_utils import CalendarUtils
 
 app = initialize_app()
 
@@ -79,6 +80,9 @@ def write_to_calendar(event: Event[Change[DocumentSnapshot]]) -> None:
         else:
             logger.debug(f'{tag} match did not changed')
     else:
-        calendar_api.delete(calendar_id=calendar_id, event_id=match_id)
+        calendar_api.delete(
+            calendar_id=calendar_id, 
+            event_id=CalendarUtils.format_id(match_id)
+        )
         logger.debug(f'{tag} match deleted!')
     
