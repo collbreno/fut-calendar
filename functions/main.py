@@ -35,7 +35,7 @@ def run_scraper(event: Event[Change[DocumentSnapshot]]) -> https_fn.Response:
         return
     
     client: Client = firestore.client()
-    scraper = MatchesScraper(soccerway_id=doc['soccerway_id'], flag=doc['flag'])
+    scraper = MatchesScraper(soccerway_id=team, flag=doc['flag'])
     matches = list(scraper.get_scheduled_matches())
     for match in matches:
         client.document(f'teams/{team}/matches/{match.id}').set(
