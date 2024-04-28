@@ -21,7 +21,6 @@ class CompetitionScraper:
         teams = []
         tables = soup.select('table.leaguetable.detailed-table')
         for table in tables:
-            print('table found')
             tbody = table.find('tbody')
             rows = tbody.find_all('tr')
             for row in rows:

@@ -1,3 +1,7 @@
+# Secrets
+credentials.json
+token.json
+
 # Logs
 logs
 *.log
@@ -10,6 +14,8 @@ firebase-debug.*.log*
 # Python files
 __pycache__
 venv
+admin-venv
+site-venv
 
 # Firebase cache
 .firebase/
