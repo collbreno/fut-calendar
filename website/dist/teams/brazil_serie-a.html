@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/assets/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-bar">
+        <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
+    </div>
+    <div class="container">
+        <h1>Times</h1>
+        <ul id="team-list">
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/315.png" alt="Athletico PR Image">
+                <h2>Athletico PR</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5mun44g14pcs1q64k3rc3tagec@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/6216.png" alt="Atlético-GO Image">
+                <h2>Atlético-GO</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3454571c22310cc849e0b3f6a2d251694d35f622bc2e7b2cacf693f7a695dc33@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/317.png" alt="Atlético-MG Image">
+                <h2>Atlético-MG</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ha2t1nlmub1j3sj3h7u3ohsgmo@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/341.png" alt="Bahia Image">
+                <h2>Bahia</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=23fu0vgmv2d5u9j90kp0tu2ic8@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/323.png" alt="Botafogo Image">
+                <h2>Botafogo</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=icr7j6819one1dg9bssebbdsf8@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/320.png" alt="Corinthians Image">
+                <h2>Corinthians</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=78ns8hclc8co165l56uvi8808g@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/305.png" alt="Criciúma Image">
+                <h2>Criciúma</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=91db98ca7cbe8b444387243698b0e92acffc500efac23a7126109632d8edc32b@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/304.png" alt="Cruzeiro Image">
+                <h2>Cruzeiro</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=htajpji9pco15osd4alonkjmpo@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/3719.png" alt="Cuiabá-MT Image">
+                <h2>Cuiabá-MT</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3v4qatet6igg3bci49fghv2434@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/22/Logo_Flamengo_crest_1980-2018.png" alt="Flamengo Image">
+                <h2>Flamengo</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8dj98snqtagrn21gar3dablrn4@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/312.png" alt="Fluminense Image">
+                <h2>Fluminense</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=t0i944jhl8upaglfe1j8vai5hk@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/327.png" alt="Fortaleza Image">
+                <h2>Fortaleza</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fcn6nno315icg3aaui04s9ru78@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/313.png" alt="Grêmio Image">
+                <h2>Grêmio</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=69beum2ubj3m7a7c65gfkk64ho@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/308.png" alt="Internacional Image">
+                <h2>Internacional</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0hlg38ktusm89k1387fqbrc23g@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/314.png" alt="Juventude Image">
+                <h2>Juventude</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0517dd89f40b98850af78343c5cbd4d4e88175d31a5ecd71ee6c589824933266@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/310.png" alt="Palmeiras Image">
+                <h2>Palmeiras</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=jl855ab36sa5epd7k8m9m0ssl8@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2827.png" alt="Red Bull Bragantino Image">
+                <h2>Red Bull Bragantino</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=v99vqgo84nl054246i3hf1brj4@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/302.png" alt="São Paulo Image">
+                <h2>São Paulo</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4hm6j5tc4i136l7g266scvof00@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://upload.wikimedia.org/wikipedia/pt/a/ac/CRVascodaGama.png" alt="Vasco da Gama Image">
+                <h2>Vasco da Gama</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=dg051pak6enqt7umubsfedjdbc@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/306.png" alt="Vitória Image">
+                <h2>Vitória</h2>
+                <a class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=89924f9199b301c96a3238f7e4d230e1c3a05eacb1daddaf25ab5b668eec0db7@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+    <script>
+        function filterList() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("team-list");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                h2 = li[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

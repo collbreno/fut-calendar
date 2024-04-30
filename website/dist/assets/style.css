@@ -1,0 +1,140 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.app-bar {
+    height: 64px;
+    background-color: #333;
+    width: 100%;
+    display: grid;
+}
+footer {
+    bottom: 0px;
+    position: fixed;
+    height: 42px;
+    background-color: #333;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+footer p {
+    color: white;
+    font-family: monospace;
+}
+.social-media-logo {
+    width: 100%;
+    max-height: 24px;
+    max-width: 24px;
+    object-fit: contain;
+    display: block;
+    margin: 0 10px;
+}
+.social-media-link {
+    color: white;
+}
+.social-media-button {
+    text-decoration: none;
+}
+#search-input {
+    width: 80%;
+    font-size: 16px;
+    margin: auto;
+    padding: 12px 20px 12px 40px;
+    border-radius: 12px;
+    outline: none;
+    border: 0px;
+}
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    color: #333;
+    text-align: center;
+    margin-top: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+.item-card {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.card-link {
+    text-decoration: none;
+}
+h2 {
+    color: #333;
+    font-size: 20px;
+    font-weight: 700;
+    flex-grow: 1;
+    margin: 0px 20px;
+}
+.item-logo {
+    width: 100%;
+    max-height: 80px;
+    max-width: 80px;
+    object-fit: contain;
+    display: block;
+    padding: 0px;
+}
+.calendar-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0px 16px;
+    height: 36px;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.card-arrow {
+    width: 36px;
+    height: 36px;
+}
+.calendar-button img {
+    margin-right: 8px;
+    height: 18px;
+    width: 18px;
+}
+.calendar-button:hover {
+    background-color: #0056b3;
+}
+@media screen and (max-width: 600px) {
+    .item-logo {
+        max-height: 48px;
+        max-width: 48px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    .app-bar {
+        height: 56px;
+    }
+    .container {
+        padding: 10px;
+        margin: 20px 5px;
+    }
+}

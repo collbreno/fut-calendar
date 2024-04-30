@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/assets/style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-bar">
+        <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
+    </div>
+    <div class="container">
+        <h1>Times</h1>
+        <ul id="team-list">
+        {% for team in list %}
+            <li class="item-card">
+                <img class="item-logo" src="{{ team.image_url }}" alt="{{ team.name }} Image">
+                <h2>{{ team.name }}</h2>
+                <a class="calendar-button" href="{{ team.link }}">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <script>
+        function filterList() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("team-list");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                h2 = li[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
