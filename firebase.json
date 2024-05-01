@@ -15,19 +15,27 @@
       ]
     }
   ],
-  "hosting": {
-    "public": "website/dist",
-    "cleanUrls": true,
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "futcalendar",
+      "public": "website/dist",
+      "cleanUrls": true,
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "fut-calendar",
+      "public": "website/old",
+      "redirects": [
+        {
+          "source": "**",
+          "destination": "https://futcalendar.web.app",
+          "type": 301
+        }
+      ]
+    }
+  ]
 }

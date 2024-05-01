@@ -1,5 +1,18 @@
 {
   "projects": {
     "default": "fut-calendar"
-  }
+  },
+  "targets": {
+    "fut-calendar": {
+      "hosting": {
+        "futcalendar": [
+          "futcalendar"
+        ],
+        "fut-calendar": [
+          "fut-calendar"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
