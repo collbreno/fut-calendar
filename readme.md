@@ -2,7 +2,7 @@
 Fut Calendar is a project to save all scheduled matches from a team in a Google Calendar. It runs almost entirely in Google Cloud Platform, automated to fetch matches from [soccerway website](https://soccerway.com/) via Cloud Functions and save it to Google Calendar via Calendar API.
 
 ## Website
-The website containing the full team list, and the calendar links as well, is currently hosted at [fut-calendar.web.app](https://fut-calendar.web.app). Check it out!
+The website containing the full team list, and the calendar links as well, is currently hosted at [futcalendar.web.app](https://futcalendar.web.app). Check it out!
 
 ## Google Cloud Project architecture
 The project in GCP (Google Cloud Platform) is divided in 5 services:
