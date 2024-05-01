@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Times</title>
+    <title>Home</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="/assets/style.css" rel="stylesheet">
+    <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
 </head>
 <body>
     <div class="container">
@@ -44,5 +48,27 @@
         </a>
         <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            firebase.analytics();
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    </script>
 </body>
 </html>

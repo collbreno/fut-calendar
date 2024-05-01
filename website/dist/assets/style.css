@@ -2,13 +2,21 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    padding-bottom: 42px;
     background-color: #f4f4f4;
 }
 .app-bar {
     height: 64px;
     background-color: #333;
     width: 100%;
-    display: grid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.back-button {
+    width: 24px;
+    height: 24px;
+    margin: 16px;
 }
 footer {
     bottom: 0px;
@@ -40,9 +48,9 @@ footer p {
     text-decoration: none;
 }
 #search-input {
-    width: 80%;
+    width: 100%;
     font-size: 16px;
-    margin: auto;
+    margin-right: 16px;
     padding: 12px 20px 12px 40px;
     border-radius: 12px;
     outline: none;

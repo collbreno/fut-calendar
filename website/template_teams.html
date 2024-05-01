@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Times</title>
+    <title>{{ competition }}</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="/assets/style.css" rel="stylesheet">
+    <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
 </head>
 <body>
     <div class="app-bar">
+        <a href="/">
+            <img class="back-button" src="/assets/arrow-left.svg" />
+        </a>
         <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
     </div>
     <div class="container">
-        <h1>Times</h1>
+        <h1>{{ competition }}</h1>
         <ul id="team-list">
         {% for team in list %}
             <li class="item-card">
                 <img class="item-logo" src="{{ team.image_url }}" alt="{{ team.name }} Image">
                 <h2>{{ team.name }}</h2>
-                <a class="calendar-button" href="{{ team.link }}">
+                <a onclick="logToAnalytics('{{ team.id }}')" class="calendar-button" href="{{ team.link }}">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
@@ -26,7 +33,17 @@
         {% endfor %}
         </ul>
     </div>
+    <footer>
+        <a class="social-media-button" href="https://github.com/collbreno/fut-calendar">
+            <img class="social-media-logo" src="/assets/github.svg"/>
+        </a>
+        <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
+    </footer>
     <script>
+        function logToAnalytics(team_id) {
+            firebase.analytics().logEvent('calendar_click', { 'team_id': team_id })
+        }
+
         function filterList() {
             var input, filter, ul, li, a, i, txtValue;
             input = document.getElementById('search-input');
@@ -44,6 +61,27 @@
                 }
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            firebase.analytics();
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+            } catch (e) {
+                console.error(e);
+            }
+        });
     </script>
 </body>
 </html>
