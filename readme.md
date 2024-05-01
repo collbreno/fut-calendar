@@ -38,10 +38,15 @@ This repository is divided into 3 folders:
 - [website](#website-folder)
 
 ### admin folder
-This folder contains Python scripts to help mantaining the project. It includes services to list teams from a competition, add new teams and create calendars for new added teams. These services are only run by me and don't run in any cloud platform.
+This folder contains Python scripts to help mantaining the project. It includes services to list teams from a competition, add new teams and create calendars for new added teams. These services are only run by me and don't run in any cloud platform. The following tasks are performed by the scripts in this folder:
+- Create a document for a competition in the database
+- List all teams from a competition
+- Create a document for a team in the database
+- Create a Google Calendar for a team via Calendar API
+- Define an appropriate [Access Control List](https://developers.google.com/calendar/api/v3/reference/acl) for the created Google Calendar
 
 ### functions folder
-This folder contains the source code of the functions deployed to Google Cloud Platform, described 
+This folder contains the source code of the functions deployed to Google Cloud Platform, described [here](#google-cloud-project-architecture).
 
 ### website folder
-This folder contains the html files deployed to Firebase Hosting. In order to increase website speed and decrease database usage, this project uses static pages. So this folder also includes the Python scripts to access the database once and generate all the html files to be deployed.
+This folder contains the html files deployed to Firebase Hosting. In order to increase website speed and decrease database usage, this project uses static pages. So this folder also includes the Python scripts to access the database once and generate all the html (via [Jinja2](https://pypi.org/project/Jinja2/)) files to be deployed.
