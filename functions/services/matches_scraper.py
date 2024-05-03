@@ -9,9 +9,14 @@ class MatchesScraper:
     def __init__(self, soccerway_id, flag) -> None:
         self.url = f'https://br.soccerway.com/teams/x/x/{soccerway_id}/matches/'
         self.flag = flag
-        self.headers = {
+        headers = {
             "user-agent": USER_AGENT
         }
+        response = requests.get(self.url, headers=headers)
+        soup = BeautifulSoup(response.content, "html.parser")
+        table = soup.find("table", class_="matches")
+        tbody = table.find("tbody")
+        self.rows = tbody.find_all("tr")
 
     def __get_td_text(self, row, column_name: str) -> str:
         return row.find("td", class_=column_name).get_text().strip()
@@ -37,15 +42,14 @@ class MatchesScraper:
                 )
 
     def get_scheduled_matches(self):
-        response = requests.get(self.url, headers=self.headers)
-        soup = BeautifulSoup(response.content, "html.parser")
-        table = soup.find("table", class_="matches")
-        tbody = table.find("tbody")
-        rows = tbody.find_all("tr")
-
-        for row in rows:
+        for row in self.rows:
             match = self.__get_match_info(row)
             if match is not None:
                 yield match
 
+    def get_cancelled_match_ids(self):
+        for row in self.rows:
+            time = self.__get_td_text(row, 'score-time')
+            if time == 'ADIA' or time == 'CANC':
+                yield row.get('data-event-id')
 

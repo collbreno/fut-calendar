@@ -42,7 +42,12 @@ def run_scraper(event: Event[Change[DocumentSnapshot]]) -> https_fn.Response:
             asdict(match)
         )
         logger.info(f'{tag} set match {match.id} ({match.home} x {match.away})')
-    
+    to_delete = list(scraper.get_cancelled_match_ids())
+    for id_to_delete in to_delete:
+        doc_ref = client.document(f'teams/{team}/matches/{id_to_delete}')
+        if doc_ref.get().exists:
+            doc_ref.delete()
+            logger.info(f'{tag} delete match {id_to_delete}')
 
 @on_document_written(document='teams/{team}/matches/{match}')
 def enque_calendar_writer_task(event: Event[Change[DocumentSnapshot]]):
