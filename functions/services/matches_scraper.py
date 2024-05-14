@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-from constants import USER_AGENT
+from constants import USER_AGENT, TIMEOUT_IN_SECONDS
 from utils.date_utils import DateUtils
 from models.match import Match
 
@@ -12,7 +12,7 @@ class MatchesScraper:
         headers = {
             "user-agent": USER_AGENT
         }
-        response = requests.get(self.url, headers=headers)
+        response = requests.get(self.url, headers=headers, timeout=TIMEOUT_IN_SECONDS)
         soup = BeautifulSoup(response.content, "html.parser")
         table = soup.find("table", class_="matches")
         tbody = table.find("tbody")

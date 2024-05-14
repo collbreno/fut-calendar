@@ -29,25 +29,27 @@ def run_all(event: pubsub_fn.CloudEvent[pubsub_fn.MessagePublishedData]):
 def run_scraper(event: Event[Change[DocumentSnapshot]]) -> https_fn.Response:
     team = event.params['team']
     tag = f'[{team}]'
-    doc = event.data.after.to_dict()
-    if event.data.before.to_dict().get('last_update') == doc.get('last_update'):
-        logger.debug(f'{tag} last_update did not changed finishing execution...')
-        return
-    
-    client: Client = firestore.client()
-    scraper = MatchesScraper(soccerway_id=team, flag=doc['flag'])
-    matches = list(scraper.get_scheduled_matches())
-    for match in matches:
-        client.document(f'teams/{team}/matches/{match.id}').set(
-            asdict(match)
-        )
-        logger.info(f'{tag} set match {match.id} ({match.home} x {match.away})')
-    to_delete = list(scraper.get_cancelled_match_ids())
-    for id_to_delete in to_delete:
-        doc_ref = client.document(f'teams/{team}/matches/{id_to_delete}')
-        if doc_ref.get().exists:
-            doc_ref.delete()
-            logger.info(f'{tag} delete match {id_to_delete}')
+    after = event.data.after
+    if after is not None:
+        doc = after.to_dict()
+        if event.data.before.to_dict().get('last_update') == doc.get('last_update'):
+            logger.debug(f'{tag} last_update did not changed finishing execution...')
+            return
+        
+        client: Client = firestore.client()
+        scraper = MatchesScraper(soccerway_id=team, flag=doc['flag'])
+        matches = list(scraper.get_scheduled_matches())
+        for match in matches:
+            client.document(f'teams/{team}/matches/{match.id}').set(
+                asdict(match)
+            )
+            logger.info(f'{tag} set match {match.id} ({match.home} x {match.away})')
+        to_delete = list(scraper.get_cancelled_match_ids())
+        for id_to_delete in to_delete:
+            doc_ref = client.document(f'teams/{team}/matches/{id_to_delete}')
+            if doc_ref.get().exists:
+                doc_ref.delete()
+                logger.info(f'{tag} delete match {id_to_delete}')
 
 @on_document_written(document='teams/{team}/matches/{match}')
 def enque_calendar_writer_task(event: Event[Change[DocumentSnapshot]]):
