@@ -26,4 +26,9 @@ if __name__ == '__main__':
     # creator.update('325') # Santa Cruz
     # creator.update('319') # Santos
 
+    # creator.update('309') # Paraná Club
+    # creator.update('6223') # Chapecoense
+    # creator.update('1678') # Porto
+    # creator.update('962') # Stuttgart
+
 

@@ -25,15 +25,19 @@ def run_all(event: pubsub_fn.CloudEvent[pubsub_fn.MessagePublishedData]):
         })
         logger.info(f'{team.id} updated!')
 
-@on_document_updated(document='teams/{team}')
+@on_document_written(document='teams/{team}')
 def run_scraper(event: Event[Change[DocumentSnapshot]]) -> https_fn.Response:
     team = event.params['team']
     tag = f'[{team}]'
     after = event.data.after
     if after is not None:
         doc = after.to_dict()
-        if event.data.before.to_dict().get('last_update') == doc.get('last_update'):
+        if event.data.before is not None and event.data.before.to_dict().get('last_update') == doc.get('last_update'):
             logger.debug(f'{tag} last_update did not changed finishing execution...')
+            return
+        
+        if doc.get('calendar_id') is None:
+            logger.debug(f'{tag} team does not have calendar id')
             return
         
         client: Client = firestore.client()
@@ -61,7 +65,12 @@ def enque_calendar_writer_task(event: Event[Change[DocumentSnapshot]]):
 
     client: Client = firestore.client()
     teamDoc = client.document(f'teams/{team}').get()
-    calendar_id = teamDoc.to_dict()['calendar_id']
+    calendar_id = teamDoc.to_dict().get('calendar_id')
+
+    if calendar_id is None:
+        logger.error(f'{tag} team does not have calendar id')
+        return
+
     converter = MatchConverter()
     after = event.data.after
 

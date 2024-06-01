@@ -2,7 +2,7 @@ from services.team_scraper import TeamScraper
 from firebase_admin.firestore import firestore
 from google.cloud.firestore import Client
 from services.calendar_api import CalendarOAuthApi
-
+from datetime import datetime
 
 class TeamCreator:
     def __init__(self, db: Client, calendar_api: CalendarOAuthApi) -> None:
@@ -22,6 +22,7 @@ class TeamCreator:
             'soccerway_id': firestore.DELETE_FIELD,
             'name': name,
             'flag': flag,
+            'last_update': datetime.now()
         }
         doc_ref = self.db.document(f'teams/{team_id}')
         doc = doc_ref.get()
