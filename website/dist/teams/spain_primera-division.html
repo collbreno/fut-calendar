@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Liga</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/assets/style.css" rel="stylesheet">
+    <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+</head>
+<body>
+    <div class="app-bar">
+        <a href="/">
+            <img class="back-button" src="/assets/arrow-left.svg" />
+        </a>
+        <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
+    </div>
+    <div class="container">
+        <h1>La Liga</h1>
+        <ul id="team-list">
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2037.png" alt="Alavés Image">
+                <h2>Alavés</h2>
+                <a onclick="logToAnalytics('2037')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=15f2b88fccbdfa8b2db5172a9df0202822a36ccfef06db219c29fca9b6cda218@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2049.png" alt="Almería Image">
+                <h2>Almería</h2>
+                <a onclick="logToAnalytics('2049')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9709ddc7a8df3904a9a408b7baac94dbc7209a68cee763cce521f5dba5fccbe3@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2019.png" alt="Athletic Bilbao Image">
+                <h2>Athletic Bilbao</h2>
+                <a onclick="logToAnalytics('2019')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7a7897613e593a78609fb1f196436eded2ebc45eb747cfabbda3a5bf9545f8fa@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2020.png" alt="Atlético de Madrid Image">
+                <h2>Atlético de Madrid</h2>
+                <a onclick="logToAnalytics('2020')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7481e0048c172a72473ccc552e7f7f0fd6d9cff6f2ac04bcf470ba58adbee673@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2017.png" alt="Barcelona Image">
+                <h2>Barcelona</h2>
+                <a onclick="logToAnalytics('2017')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=46ceb72e0b9f57fa4bfec09f23f5a3a162287393cc0ae2ff48b33c6fcd9c1f66@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2025.png" alt="Betis Image">
+                <h2>Betis</h2>
+                <a onclick="logToAnalytics('2025')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c9aa17ffd5aadb2f9a9daeea5ec004ce9952abdc308896ebef36df9f3bbadd35@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2041.png" alt="Cadiz Image">
+                <h2>Cadiz</h2>
+                <a onclick="logToAnalytics('2041')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f5be10cd9847535ab1fa2beb7d81f20f034173d810ba73c99ab326b8aca578d0@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2033.png" alt="Celta de Vigo Image">
+                <h2>Celta de Vigo</h2>
+                <a onclick="logToAnalytics('2033')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d41d660eeb1a43c2be8707ae7e518d3e464f10c8221047396df69bf6dab1feeb@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2039.png" alt="Getafe Image">
+                <h2>Getafe</h2>
+                <a onclick="logToAnalytics('2039')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b9d962c9f3ce677f06103ce024f8d6e154213314a55b6e5150c2d3e7f724ed35@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2101.png" alt="Girona Image">
+                <h2>Girona</h2>
+                <a onclick="logToAnalytics('2101')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=605f22e387855c4c106ff4cffc74c27330fc1a0891ce6cc5fc4afd040169aa81@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/7072.png" alt="Granada Image">
+                <h2>Granada</h2>
+                <a onclick="logToAnalytics('7072')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5292fffd46dd0bfc4b4e90ca4b99eb650d81057079774dd773c5f633cc5dfbda@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2055.png" alt="Las Palmas Image">
+                <h2>Las Palmas</h2>
+                <a onclick="logToAnalytics('2055')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9cca0ca01156e35ff18c1172a6108d830a305d3d71707d77ece3048e7584304c@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2027.png" alt="Mallorca Image">
+                <h2>Mallorca</h2>
+                <a onclick="logToAnalytics('2027')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4be560f217a5b717d5ae64d144dce23ad98cd498892bf4c6247874b4da366881@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2022.png" alt="Osasuna Image">
+                <h2>Osasuna</h2>
+                <a onclick="logToAnalytics('2022')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c82ea568f24dc7cd112d7687d8f4bf9dbe72e934d9b7543e3e7f5c7867eddb61@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2054.png" alt="Rayo Vallecano Image">
+                <h2>Rayo Vallecano</h2>
+                <a onclick="logToAnalytics('2054')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=64a762a88d95738349797dc12fa6f05ebb178d993b24c1fa426d642988ea5258@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2016.png" alt="Real Madrid Image">
+                <h2>Real Madrid</h2>
+                <a onclick="logToAnalytics('2016')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2808efb0bd89db7bb00d26cf5f2d92bb95fd1d1534adff14362f169032e14103@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2028.png" alt="Real Sociedad Image">
+                <h2>Real Sociedad</h2>
+                <a onclick="logToAnalytics('2028')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a1530ee333d218eea5b754160b7b380d663a279600ab89ac8ced2fd1b16c420c@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2021.png" alt="Sevilla Image">
+                <h2>Sevilla</h2>
+                <a onclick="logToAnalytics('2021')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2496c36ca5b7c126dec0b153326f3a4c4ad28c3fc542e085750524eca851911d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2015.png" alt="Valencia Image">
+                <h2>Valencia</h2>
+                <a onclick="logToAnalytics('2015')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=662c749f866892d1154650485427b9d3cc504b9b412fc88431bd6ef54a00dfac@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2023.png" alt="Villarreal Image">
+                <h2>Villarreal</h2>
+                <a onclick="logToAnalytics('2023')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=372232c51562b317366a72fa5c447dd1e317fa93f7f120a7b930681ea5dc1c5e@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+    <footer>
+        <a class="social-media-button" href="https://github.com/collbreno/fut-calendar">
+            <img class="social-media-logo" src="/assets/github.svg"/>
+        </a>
+        <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
+    </footer>
+    <script>
+        function logToAnalytics(teamId) {
+            firebase.analytics().logEvent('calendar_click', { 'team_id': teamId })
+        }
+
+        function filterList() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("team-list");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                h2 = li[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            firebase.analytics();
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://futcalendar.web.app">
+    <meta property="og:title" content="Calendários de futebol">
+    <meta property="og:description" content="Copa América e Eurocopa disponíveis!">
+    <meta property="og:image" content="https://futcalendar.web.app/assets/preview.png">
+    <meta property="og:image:width" content="1079">
+    <meta property="og:image:height" content="833">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@collbreno">
+    <meta name="twitter:url" content="https://futcalendar.web.app">
+    <meta name="twitter:title" content="Calendários de futebol">
+    <meta name="twitter:description" content="Copa América e Eurocopa disponíveis!">
+    <meta name="twitter:image" content="https://futcalendar.web.app/assets/preview.png">
+
     <title>Home</title>
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -15,7 +30,22 @@
     <div class="container">
         <h1>Competições</h1>
         <ul id="competition-list">
-        {% for competition in list %}
+        {% for competition in espn_competitions %}
+            <li class="item-card">
+                <img class="item-logo" src="{{ competition.image_url }}" alt="{{ competition.name }} Image">
+                <h2>{{ competition.name }}</h2>
+                <a onclick="logToAnalytics('{{ competition.id }}')" class="calendar-button" href="{{ competition.link }}">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="container">
+        <h1>Times</h1>
+        <ul id="competition-list">
+        {% for competition in sw_competitions %}
             <a class="card-link" href="{{ competition.link }}">
                 <li class="item-card">
                     <img class="item-logo" src="{{ competition.image_url }}" alt="{{ competition.name }} Image">
@@ -33,6 +63,10 @@
         <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
     </footer>
     <script>
+        function logToAnalytics(competitionId) {
+            firebase.analytics().logEvent('calendar_click', { 'competition_id': competitionId })
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
             firebase.analytics();
             try {

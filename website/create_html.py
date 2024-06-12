@@ -49,14 +49,14 @@ if __name__ == '__main__':
     firebase_admin.initialize_app()
     db = firestore.client()
 
-
-    competition_data = []
+    espn_competitions = []
+    sw_competitions = []
 
     if not os.path.exists(TEAMS_FOLDER):
         os.mkdir(TEAMS_FOLDER)
 
     all_teams = 'Todos os times'
-    competition_data.append(asdict(Item(
+    sw_competitions.append(asdict(Item(
         link='/teams/all',
         name=all_teams,
         image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Soccerball.svg/2048px-Soccerball.svg.png',
@@ -68,18 +68,29 @@ if __name__ == '__main__':
 
     for competition_ref in competitions:
         competition = competition_ref.get().to_dict()
-        competition_data.append(asdict(Item(
-            link=f'/teams/{competition_ref.id}',
-            name=competition['name'],
-            image_url=competition['image_url'],
-            id=competition_ref.id,
-        )))
-        __generate_teams_html(competition['name'], competition['teams'], competition_ref.id)
+        if 'teams' in competition:
+            sw_competitions.append(asdict(Item(
+                link=f'/teams/{competition_ref.id}',
+                name=competition['name'],
+                image_url=competition['image_url'],
+                id=competition_ref.id,
+            )))
+            __generate_teams_html(competition['name'], competition['teams'], competition_ref.id)
+        else:
+            espn_competitions.append(asdict(Item(
+                link=__get_calendar_url(competition['calendar_id']),
+                name=competition['name'],
+                image_url=competition['image_url'],
+                id=competition_ref.id,
+            )))
 
 
     env = Environment(loader=FileSystemLoader('.'))
     competitions_template = env.get_template('template_competitions.html')
-    html_output = competitions_template.render(list=competition_data)
+    html_output = competitions_template.render(
+        sw_competitions=sw_competitions, 
+        espn_competitions=espn_competitions,
+    )
 
     with open(DIST_FOLDER+'index.html', 'w', encoding='utf-8') as file:
         file.write(html_output)

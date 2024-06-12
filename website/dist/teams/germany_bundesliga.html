@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bundesliga</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/assets/style.css" rel="stylesheet">
+    <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+</head>
+<body>
+    <div class="app-bar">
+        <a href="/">
+            <img class="back-button" src="/assets/arrow-left.svg" />
+        </a>
+        <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
+    </div>
+    <div class="container">
+        <h1>Bundesliga</h1>
+        <ul id="team-list">
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1000.png" alt="Augsburg Image">
+                <h2>Augsburg</h2>
+                <a onclick="logToAnalytics('1000')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ef8a30054e1585952a4fe4c064e843a093f9349bafc23e84f35ee6687d1bbaae@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/963.png" alt="Bayer Leverkusen Image">
+                <h2>Bayer Leverkusen</h2>
+                <a onclick="logToAnalytics('963')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=63183c1e45a67e7b7bd2ff26f6a9a4bb902fb672a509640d8521553e85491043@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/961.png" alt="Bayern Munique Image">
+                <h2>Bayern Munique</h2>
+                <a onclick="logToAnalytics('961')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=43d48f26da7c834aab370a1b784c941e813ba2abc0cf09a525d75e67f7c18453@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/965.png" alt="Bochum Image">
+                <h2>Bochum</h2>
+                <a onclick="logToAnalytics('965')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=cf2f4e29ffc1b3f7a2af49af27197b787bfdd294befdba093eb94ff02c1203c2@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/964.png" alt="Borussia Dortmund Image">
+                <h2>Borussia Dortmund</h2>
+                <a onclick="logToAnalytics('964')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8a0c3a1abe00e769979634a0d2b4895de8e2d79c088bf9d45f5cfdfc3e94ef5d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/971.png" alt="Borussia Mönchengladbach Image">
+                <h2>Borussia Mönchengladbach</h2>
+                <a onclick="logToAnalytics('971')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f994af0d7b4aca30e759d32589c19e8ffa1b109dbc3688e525efbda79ca1febf@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/980.png" alt="Colônia Image">
+                <h2>Colônia</h2>
+                <a onclick="logToAnalytics('980')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=188a250900e12374a6c70514a574dfa1258a219b5e97af806d695c91870a1e82@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2549.png" alt="Darmstadt 98 Image">
+                <h2>Darmstadt 98</h2>
+                <a onclick="logToAnalytics('2549')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=032b500fa4bd466c099ed80794e78db551abdbb2703ea2bf8070a6011c95b8a8@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/979.png" alt="Eintracht Frankfurt Image">
+                <h2>Eintracht Frankfurt</h2>
+                <a onclick="logToAnalytics('979')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e8ecdf32e9c63c8bd0a67ab1c044ecc8a312bcdbae75a86499f1cb4efeee7f50@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/970.png" alt="Freiburg Image">
+                <h2>Freiburg</h2>
+                <a onclick="logToAnalytics('970')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=38d4ffb965c75c39e500fecbe32b7eb683a96bbecbfd635d7681eb7978400ec9@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/5862.png" alt="Heidenheim Image">
+                <h2>Heidenheim</h2>
+                <a onclick="logToAnalytics('5862')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e54738c75c288bf144465221cae5c4f865167d6d5e8208b52800f125074cfad4@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1001.png" alt="Hoffenheim Image">
+                <h2>Hoffenheim</h2>
+                <a onclick="logToAnalytics('1001')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d881fc3c85cffd0c2a23e483c82610ebc0e054884d7d9fbb7bd3bf00e4efecbb@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/977.png" alt="Mainz Image">
+                <h2>Mainz</h2>
+                <a onclick="logToAnalytics('977')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f613655a9053165a1c32a113ff1e6c96010e615b9f59ee5b8f710f4c64a99844@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/13410.png" alt="RB Leipzig Image">
+                <h2>RB Leipzig</h2>
+                <a onclick="logToAnalytics('13410')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8a78365c3d89fff264728bbbfb1971ef2992fa5fd397bd6c00b5b719fafe4e6f@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/962.png" alt="Stuttgart Image">
+                <h2>Stuttgart</h2>
+                <a onclick="logToAnalytics('962')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3e6cd58959c2ccda417f1521504251df41c926aef157eb1a7a6f7367c07ccfd4@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1026.png" alt="Union Berlin Image">
+                <h2>Union Berlin</h2>
+                <a onclick="logToAnalytics('1026')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5393369793b26dd04da7b7e2003baf4559965c9741cb035ff794055b208084aa@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/960.png" alt="Werder Bremen Image">
+                <h2>Werder Bremen</h2>
+                <a onclick="logToAnalytics('960')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b0dbcf4aff72c97c08484845fa1ae59a8bed39d499ddba0383940dfb0d9fb19d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/968.png" alt="Wolfsburg Image">
+                <h2>Wolfsburg</h2>
+                <a onclick="logToAnalytics('968')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4072933c31e54ea96ea8b68862d80fdb84ab8349bdcc7cc88abbad0322ca1095@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+    <footer>
+        <a class="social-media-button" href="https://github.com/collbreno/fut-calendar">
+            <img class="social-media-logo" src="/assets/github.svg"/>
+        </a>
+        <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
+    </footer>
+    <script>
+        function logToAnalytics(teamId) {
+            firebase.analytics().logEvent('calendar_click', { 'team_id': teamId })
+        }
+
+        function filterList() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("team-list");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                h2 = li[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            firebase.analytics();
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    </script>
+</body>
+</html>
