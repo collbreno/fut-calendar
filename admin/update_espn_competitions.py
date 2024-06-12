@@ -10,4 +10,3 @@ if __name__ == '__main__':
     creator = EspnCompetitionCreator(db=db, calendar_api=calendar_api)
     creator.update('conmebol.america')
     creator.update('uefa.euro')
-    creator.update('fifa.olympics')

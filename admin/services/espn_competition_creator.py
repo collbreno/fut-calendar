@@ -2,6 +2,7 @@
 from google.cloud.firestore import Client
 from services.calendar_api import CalendarOAuthApi
 from services.espn_competition_scraper import EspnCompetitionScraper
+import json
 
 class EspnCompetitionCreator:
     def __init__(self,db: Client, calendar_api: CalendarOAuthApi) -> None:
@@ -34,6 +35,18 @@ class EspnCompetitionCreator:
         else:
             print(f'{slug} already has calendar!')
         doc_ref.set(data, merge=True)
+        self.__update_maps(competition.slug, ['en', 'pt'])
+
+    def __update_maps(self, slug: str, langs: list[str]):
+        data = {}
+        with open(f'./map_flags/{slug}.json', encoding='utf-8') as f:
+            data['map_flag'] = json.load(f)
+        for lang in langs:
+            data[f'map_name_{lang}'] = self.scraper.get_map_name(slug, lang)
+        doc_ref = self.db.document(f'competitions/{slug}')
+        doc_ref.set(data, merge=True)
+
+
 
 
     
