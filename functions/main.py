@@ -8,6 +8,7 @@ from services.match_converter import MatchConverter
 from datetime import datetime
 from services.matches_scraper import MatchesScraper
 from services.espn_competition_scraper import EspnCompetitionScraper
+from services.espn_team_scraper import EspnTeamScraper
 from dataclasses import asdict
 from models.match import Match
 from utils.calendar_utils import CalendarUtils
@@ -79,7 +80,12 @@ def runCompetitionScraper(event: Event[Change[DocumentSnapshot]]) -> https_fn.Re
             return
         
         client: Client = firestore.client()
-        mapper = TeamsMapper(map_flag=doc.get('map_flag'), map_langs=[doc.get('map_name_en'), doc.get('map_name_pt')])
+        mapper = None
+        if doc.get('use_mapper') == True:
+            flag_mapper = client.document('mappers/flag').get().to_dict()
+            pt_mapper = client.document('mappers/lang_en').get().to_dict()
+            en_mapper = client.document('mappers/lang_pt').get().to_dict()
+            mapper = TeamsMapper(map_flag=flag_mapper, map_langs=[pt_mapper, en_mapper])
         scraper = EspnCompetitionScraper(league_slug=league_slug, flag=doc['flag'],mapper=mapper)
         matches = list(scraper.get_scheduled_matches())
         for match in matches:
@@ -94,6 +100,42 @@ def runCompetitionScraper(event: Event[Change[DocumentSnapshot]]) -> https_fn.Re
         #         doc_ref.delete()
         #         logger.info(f'{tag} delete match {id_to_delete}')
 
+@on_document_written(document='espn_teams/{team_slug}')
+def runEspnTeamScraper(event: Event[Change[DocumentSnapshot]]) -> https_fn.Response:
+    team_slug = event.params['team_slug']
+    tag = f'[{team_slug}]'
+    after = event.data.after
+    if after is not None:
+        doc = after.to_dict()
+        if event.data.before is not None and event.data.before.to_dict().get('last_update') == doc.get('last_update'):
+            logger.debug(f'{tag} last_update did not changed. finishing execution...')
+            return
+        
+        if doc.get('calendar_id') is None:
+            logger.debug(f'{tag} does not have calendar id')
+            return
+        
+        client: Client = firestore.client()
+        mapper = None
+        if doc.get('use_mapper') == True:
+            flag_mapper = client.document('mappers/flag').get().to_dict()
+            pt_mapper = client.document('mappers/lang_en').get().to_dict()
+            en_mapper = client.document('mappers/lang_pt').get().to_dict()
+            mapper = TeamsMapper(map_flag=flag_mapper, map_langs=[pt_mapper, en_mapper])
+        scraper = EspnTeamScraper(team_id=doc['id'], mapper=mapper, flag=doc.get('flag'))
+        matches = list(scraper.get_scheduled_matches())
+        for match in matches:
+            client.document(f'espn_teams/{team_slug}/matches/{match.id}').set(
+                asdict(match)
+            )
+            logger.info(f'{tag} set match {match.id} ({match.home} x {match.away})')
+        # to_delete = list(scraper.get_cancelled_match_ids())
+        # for id_to_delete in to_delete:
+        #     doc_ref = client.document(f'espn_teams/{team_slug}/matches/{id_to_delete}')
+        #     if doc_ref.get().exists:
+        #         doc_ref.delete()
+        #         logger.info(f'{tag} delete match {id_to_delete}')
+
 @on_document_written(document='teams/{team}/matches/{match}')
 def onTeamMatchWritten(event: Event[Change[DocumentSnapshot]]):
     team = event.params['team']
@@ -102,6 +144,22 @@ def onTeamMatchWritten(event: Event[Change[DocumentSnapshot]]):
     logger.debug(f'{tag} cloud function started')
     client: Client = firestore.client()
     teamDoc = client.document(f'teams/{team}').get()
+    calendar_id = teamDoc.to_dict().get('calendar_id')
+    __enqueCalendarWriterTask(
+        calendar_id=calendar_id,
+        tag=tag,
+        match_id=match_id,
+        data=event.data,
+    )
+
+@on_document_written(document='espn_teams/{team}/matches/{match}')
+def onEspnTeamMatchWritten(event: Event[Change[DocumentSnapshot]]):
+    team = event.params['team']
+    match_id = event.params['match']
+    tag = f'[{team}/{match_id}]'
+    logger.debug(f'{tag} cloud function started')
+    client: Client = firestore.client()
+    teamDoc = client.document(f'espn_teams/{team}').get()
     calendar_id = teamDoc.to_dict().get('calendar_id')
     __enqueCalendarWriterTask(
         calendar_id=calendar_id,

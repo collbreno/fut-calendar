@@ -21,17 +21,34 @@ class EspnCompetitionScraper:
         for event in events:
             competition = event['competitions'][0]
             if (competition['timeValid']):
-                home = competition['competitors'][0]['team']['id']
-                away = competition['competitors'][1]['team']['id']
-                competition = self.response['leagues'][0]['name']
+                home = competition['competitors'][0]['team']
+                away = competition['competitors'][1]['team']
+                competition_name = self.response['leagues'][0]['name']
                 yield Match(
                     id=event['id'],
                     flag=self.flag,
                     datetime=DateUtils.get_datetime_from_espn_api(event['date']),
-                    competition=self.mapper.get_description(home_id=home, away_id=away, competition=competition),
-                    home=self.mapper.get_team(home),
-                    away=self.mapper.get_team(away),
+                    home=self.__get_team_name(home),
+                    away=self.__get_team_name(away),
+                    competition=self.__get_description(home, away, competition_name),
                 )
+    
+    def __get_team_name(self, team: dict) -> str:
+        default = team.get('abbreviation', team['displayName'])
+        if self.mapper is None:
+            return default
+        else:
+            return self.mapper.get_team(team['id'], default)
+        
+    def __get_description(self, home: dict, away: dict, competition: str) -> str:
+        if self.mapper is None:
+            return competition
+        else:
+            return self.mapper.get_description(
+                home_id=home['id'], 
+                away_id=away['id'], 
+                competition=competition,
+            )
     
     def __get_date_range(self):
         url = f'https://sports.core.api.espn.com/v2/sports/soccer/leagues/{self.slug}/calendar/ondays'
