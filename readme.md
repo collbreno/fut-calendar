@@ -17,13 +17,13 @@ The project in GCP (Google Cloud Platform) is divided in 5 services:
 The python scripts runs in 5 Cloud Functions, which are responsible for the whole proccess from fetching matches from the internet to saving it to the calendars:
 
 ### function 1: `runAllScrapers`
-The first function is triggered every day at 10 am by a **Cloud Scheduler**. This function is only responsible for triggering the second function via a database updation. It calls one instance of function for each team saved in the database.
+The first function is triggered every day at 10 am by a **Cloud Scheduler**. This function is only responsible for triggering the second function via a database update. It calls one instance of function for each team saved in the database.
 
 ### function 2: `runScraper`
-The second function is triggered by the first function via a database updation under a team document. This function is responsible for scraping the web page from the corresponding team. It fetches the **soccerway** link and scrapes it to get a list of scheduled matches. Finally, it saves all the scheduled matches to the **Firestore Database**. Also, it deletes from the database all the postponed and cancelled matches.
+The second function is triggered by the first function via a database update under a team document. This function is responsible for scraping the web page from the corresponding team. It fetches the **soccerway** link and scrapes it to get a list of scheduled matches. Finally, it saves all the scheduled matches to the **Firestore Database**. Also, it deletes from the database all the postponed and cancelled matches.
 
 ### function 3: `enqueCalendarWriterTask`
-The third function is triggered via a database creation, updation or deletion under a match document. Due to [Calendar API quotas](https://developers.google.com/calendar/api/guides/quota), the API access has to managed via **Cloud Tasks**. So this function is responsible for converting the match info to a calendar event and enqueuing the task to write an update to the calendar. The tasks queue will gradually dispatch the functions, ensuring it will be run as soon as possible without exceeding API quotas. In case of limit exceeded, it will use a exponential backoff in order to get into limits again.
+The third function is triggered via a database creation, update or deletion under a match document. Due to [Calendar API quotas](https://developers.google.com/calendar/api/guides/quota), the API access has to be managed via **Cloud Tasks**. So this function is responsible for converting the match info to a calendar event and enqueuing the task to write an update to the calendar. The tasks queue will gradually dispatch the functions, ensuring it will be run as soon as possible without exceeding API quotas. In case of limit exceeded, it will use a exponential backoff in order to get into limits again.
 
 ### function 4: `insertCalendarEvent`
 The fourth function is triggered via task dispatch by the task queue. This function is responsible for accessing the Calendar API to perform an upsertion to an event within the team calendar.
