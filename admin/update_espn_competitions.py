@@ -8,5 +8,12 @@ if __name__ == '__main__':
     db = firestore.client()
     calendar_api = CalendarOAuthApi()
     creator = EspnCompetitionCreator(db=db, calendar_api=calendar_api)
-    creator.update('conmebol.america')
-    creator.update('uefa.euro')
+    creator.update(
+        slug='fifa.olympics', 
+        create_calendar=True,
+        create_maps=True,
+        create_teams=False, 
+        flag='Fem', 
+        use_mapper=True,
+    )
+    # creator.update('uefa.euro')

@@ -1,6 +1,7 @@
 import requests
 from models.espn_competition import EspnCompetition
 from utils.dict_utils import DictUtils
+from models.espn_team import EspnTeam
 
 class EspnCompetitionScraper:
     def __init__(self) -> None:
@@ -28,3 +29,19 @@ class EspnCompetitionScraper:
             team = league_team['team']
             mapper[team['id']] = team['name']
         return DictUtils.sort_as_int(mapper)
+    
+    def get_teams(self, league_slug, flag) -> list[EspnTeam]:
+        list = []
+        url = f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league_slug}/teams'
+        response = requests.get(url, params=self.params).json()
+        league = response['sports'][0]['leagues'][0]
+        for league_team in league['teams']:
+            team = league_team['team']
+            list.append(EspnTeam(
+                name=team['displayName'],
+                image_url=team['logos'][0]['href'],
+                id=team['id'],
+                flag=flag,
+                slug=team['slug']
+            ))
+        return list

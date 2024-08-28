@@ -5,7 +5,8 @@ from services.calendar_api import CalendarOAuthApi
 if __name__ == '__main__':
     initialize_app()
     db = firestore.client()
-    creator = TeamCreator(db, CalendarOAuthApi())
+    print(len(list(db.collection('teams').list_documents())))
+    # creator = TeamCreator(db, CalendarOAuthApi())
     # creator.update('2276') # SJ Earthquakes
     # creator.update('5967', 'Fem') # Brasil Fem
     # creator.update('5977', 'Fem') # EUA Fem
