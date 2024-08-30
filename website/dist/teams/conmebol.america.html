@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa América</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/assets/style.css" rel="stylesheet">
+    <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+</head>
+<body>
+    <div class="app-bar">
+        <a href="/">
+            <img class="back-button" src="/assets/arrow-left.svg" />
+        </a>
+        <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
+    </div>
+    <div class="container">
+        <h1>Copa América</h1>
+        <ul id="team-list">
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina Image">
+                <h2>Argentina</h2>
+                <a onclick="logToAnalytics('arg')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8b91e7161b58cfcd6714fa83d248997eb8a3f35fe73119e6ad183819a71b6915@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bol.png" alt="Bolívia Image">
+                <h2>Bolívia</h2>
+                <a onclick="logToAnalytics('bol')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a220b48becc1d5efec37cb3c842f23e1bbe89d8c79e4c30989e7909c22ea7638@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bra.png" alt="Brasil Image">
+                <h2>Brasil</h2>
+                <a onclick="logToAnalytics('bra')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3dpu2e1f08gloo7bbugkqs4t3o@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/can.png" alt="Canadá Image">
+                <h2>Canadá</h2>
+                <a onclick="logToAnalytics('can')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0a4c324ed730861639cf55c2bc0490d747fc1aeddfa55c808b5af97ff8d603f9@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/chi.png" alt="Chile Image">
+                <h2>Chile</h2>
+                <a onclick="logToAnalytics('chi')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b58aa799a44341ca434f3405748b6b8393b21d1787c4d761602929d57e67ac76@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colômbia Image">
+                <h2>Colômbia</h2>
+                <a onclick="logToAnalytics('col')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b75cc1fcc34c6a6d92f0d441dfcb4f9f0210711096c4d92e2af2e2de4184437d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica Image">
+                <h2>Costa Rica</h2>
+                <a onclick="logToAnalytics('crc')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f788e71f100f2c083ca7f63d2af40c7289a9f2e7f0c90ca28bd0362cbf20d150@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ecu.png" alt="Equador Image">
+                <h2>Equador</h2>
+                <a onclick="logToAnalytics('ecu')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fd4dbe007121bee2ad5aba7969888d9f14581c0b7f6d13b87676e8a86c85a360@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="Estados Unidos Image">
+                <h2>Estados Unidos</h2>
+                <a onclick="logToAnalytics('usa')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=21700b151ec1f91dd3b49067e4fe88ab78aab795c54e36fe5fb9958c6fc8a5d9@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/jam.png" alt="Jamaica Image">
+                <h2>Jamaica</h2>
+                <a onclick="logToAnalytics('jam')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=304417cf79e8f1242e1f627fa76845da3ae32c58ecde4b73d07fc6e6944ceb60@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México Image">
+                <h2>México</h2>
+                <a onclick="logToAnalytics('mex')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=bc0d0bb9b3585a0990571413e6c515f090a0a52c6ac70416baf429a04dc3638d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá Image">
+                <h2>Panamá</h2>
+                <a onclick="logToAnalytics('pan')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d43df24dd1ea0ef00150793367c851712cd25bb0a311b08eff41f11a9c20dc93@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="Paraguai Image">
+                <h2>Paraguai</h2>
+                <a onclick="logToAnalytics('par')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3dc3c5b3c08ce49fc7c8e02c64d8c8c5b9b1dcd6a8c5d25e223b8c450ea562db@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/per.png" alt="Peru Image">
+                <h2>Peru</h2>
+                <a onclick="logToAnalytics('per')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=584cc16de1a73298cf4fb3ad15584c1c8100cc06d104a78f5101d7bcab0bb12b@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/uru.png" alt="Uruguai Image">
+                <h2>Uruguai</h2>
+                <a onclick="logToAnalytics('uru')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=1cd3d4c30a70bee9642c060daf639360a28c51bcdc267dfd956ccf4a79e477dd@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ven.png" alt="Venezuela Image">
+                <h2>Venezuela</h2>
+                <a onclick="logToAnalytics('ven')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b28814dffa15f0a4c7c41b0b7137a47af31d8cb5745d444fd2f167a165ca109d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+    <footer>
+        <a class="social-media-button" href="https://github.com/collbreno/fut-calendar">
+            <img class="social-media-logo" src="/assets/github.svg"/>
+        </a>
+        <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
+    </footer>
+    <script>
+        function logToAnalytics(teamId) {
+            firebase.analytics().logEvent('calendar_click', { 'team_id': teamId })
+        }
+
+        function filterList() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("team-list");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                h2 = li[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            firebase.analytics();
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todos os times</title>
+    <title>Todos os Times e Seleções</title>
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="/assets/style.css" rel="stylesheet">
@@ -19,1237 +19,1435 @@
         <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
     </div>
     <div class="container">
-        <h1>Todos os times</h1>
+        <h1>Todos os Times e Seleções</h1>
         <ul id="team-list">
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2037.png" alt="Alavés Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/6418.png" alt="1. FC Heidenheim 1846 Image">
+                <h2>1. FC Heidenheim 1846</h2>
+                <a onclick="logToAnalytics('betbrain.heidenheimer_sb')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e54738c75c288bf144465221cae5c4f865167d6d5e8208b52800f125074cfad4@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/103.png" alt="AC Milan Image">
+                <h2>AC Milan</h2>
+                <a onclick="logToAnalytics('ita.ac_milan')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fa054ee0f6a5dcc113cdd689a736cb01b62769afdf414777c81aa36aefb9b748@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/349.png" alt="AFC Bournemouth Image">
+                <h2>AFC Bournemouth</h2>
+                <a onclick="logToAnalytics('eng.bournemouth')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4e16896c47ff85daca1217fbcc589c9e561a671b237f82d4d18279553eb3f1ae@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/172.png" alt="AJ Auxerre Image">
+                <h2>AJ Auxerre</h2>
+                <a onclick="logToAnalytics('fra.auxerre')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c73b363aa56d38cef7c1e589ad8965c2361f6210b2f256fb45683dd051275ae0@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/174.png" alt="AS Mônaco Image">
+                <h2>AS Mônaco</h2>
+                <a onclick="logToAnalytics('fra.monaco')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f5f8cd513d848096a4018a59211e51dd5e7089078f0f2ccc9d3eb1fce652aefa@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/104.png" alt="AS Roma Image">
+                <h2>AS Roma</h2>
+                <a onclick="logToAnalytics('ita.as_roma')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6a6d5a763abc30ea32a8f72db057a97978af9e5a5ea5298ca3e31a5ec1474b5d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/96.png" alt="Alavés Image">
                 <h2>Alavés</h2>
-                <a onclick="logToAnalytics('2037')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=15f2b88fccbdfa8b2db5172a9df0202822a36ccfef06db219c29fca9b6cda218@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.alaves')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=15f2b88fccbdfa8b2db5172a9df0202822a36ccfef06db219c29fca9b6cda218@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2049.png" alt="Almería Image">
-                <h2>Almería</h2>
-                <a onclick="logToAnalytics('2049')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9709ddc7a8df3904a9a408b7baac94dbc7209a68cee763cce521f5dba5fccbe3@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/alb.png" alt="Albania Image">
+                <h2>Albania</h2>
+                <a onclick="logToAnalytics('alb')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e6659a863ba0e68febf9d229cfd5fb7e7a7afae0822abadb1403a32b354ec61e@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/337.png" alt="América-MG Image">
-                <h2>América-MG</h2>
-                <a onclick="logToAnalytics('337')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3kaflskg4io2t3gf6bomsanv68@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ger.png" alt="Alemanha Image">
+                <h2>Alemanha</h2>
+                <a onclick="logToAnalytics('ger')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b1cc475c31a809712f2bb2090b3f8f745f4c139ab7e101542895e2d96f29cf93@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/660.png" alt="Arsenal Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7868.png" alt="Angers Image">
+                <h2>Angers</h2>
+                <a onclick="logToAnalytics('fra.angers')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=da8cacdbd128ece28ffbc20db8e4b9216236eccb757c2172a6745fd52d28acc3@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina Image">
+                <h2>Argentina</h2>
+                <a onclick="logToAnalytics('arg')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8b91e7161b58cfcd6714fa83d248997eb8a3f35fe73119e6ad183819a71b6915@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/359.png" alt="Arsenal Image">
                 <h2>Arsenal</h2>
-                <a onclick="logToAnalytics('660')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=j215re7udmlpqh7vh6jaf2m8qo@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.arsenal')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=j215re7udmlpqh7vh6jaf2m8qo@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/665.png" alt="Aston Villa Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/362.png" alt="Aston Villa Image">
                 <h2>Aston Villa</h2>
-                <a onclick="logToAnalytics('665')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e5c6271fa4ffdaa2f5193f3441c96fe0de61b80f511732018e471b0a1e5e8fc8@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.aston_villa')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e5c6271fa4ffdaa2f5193f3441c96fe0de61b80f511732018e471b0a1e5e8fc8@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1255.png" alt="Atalanta Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/105.png" alt="Atalanta Image">
                 <h2>Atalanta</h2>
-                <a onclick="logToAnalytics('1255')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e7a2866c3e9de47dd05540753f9e2528040b9f91d38fac0a48f0b2c4b23219d4@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.atalanta')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e7a2866c3e9de47dd05540753f9e2528040b9f91d38fac0a48f0b2c4b23219d4@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2019.png" alt="Athletic Bilbao Image">
-                <h2>Athletic Bilbao</h2>
-                <a onclick="logToAnalytics('2019')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7a7897613e593a78609fb1f196436eded2ebc45eb747cfabbda3a5bf9545f8fa@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/93.png" alt="Athletic Club Image">
+                <h2>Athletic Club</h2>
+                <a onclick="logToAnalytics('esp.athletic_club')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7a7897613e593a78609fb1f196436eded2ebc45eb747cfabbda3a5bf9545f8fa@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/315.png" alt="Athletico PR Image">
-                <h2>Athletico PR</h2>
-                <a onclick="logToAnalytics('315')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5mun44g14pcs1q64k3rc3tagec@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/3458.png" alt="Athletico-PR Image">
+                <h2>Athletico-PR</h2>
+                <a onclick="logToAnalytics('bra.atletico_paranaense')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5mun44g14pcs1q64k3rc3tagec@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2020.png" alt="Atlético de Madrid Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/1068.png" alt="Atlético de Madrid Image">
                 <h2>Atlético de Madrid</h2>
-                <a onclick="logToAnalytics('2020')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7481e0048c172a72473ccc552e7f7f0fd6d9cff6f2ac04bcf470ba58adbee673@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.atletico_madrid')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7481e0048c172a72473ccc552e7f7f0fd6d9cff6f2ac04bcf470ba58adbee673@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/6216.png" alt="Atlético-GO Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/10357.png" alt="Atlético-GO Image">
                 <h2>Atlético-GO</h2>
-                <a onclick="logToAnalytics('6216')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3454571c22310cc849e0b3f6a2d251694d35f622bc2e7b2cacf693f7a695dc33@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.goianiense')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3454571c22310cc849e0b3f6a2d251694d35f622bc2e7b2cacf693f7a695dc33@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/317.png" alt="Atlético-MG Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7632.png" alt="Atlético-MG Image">
                 <h2>Atlético-MG</h2>
-                <a onclick="logToAnalytics('317')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ha2t1nlmub1j3sj3h7u3ohsgmo@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.atltico-mg')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ha2t1nlmub1j3sj3h7u3ohsgmo@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1000.png" alt="Augsburg Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/3841.png" alt="Augsburg Image">
                 <h2>Augsburg</h2>
-                <a onclick="logToAnalytics('1000')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ef8a30054e1585952a4fe4c064e843a093f9349bafc23e84f35ee6687d1bbaae@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.fc_augsburg')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ef8a30054e1585952a4fe4c064e843a093f9349bafc23e84f35ee6687d1bbaae@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/341.png" alt="Bahia Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/9967.png" alt="Bahia Image">
                 <h2>Bahia</h2>
-                <a onclick="logToAnalytics('341')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=23fu0vgmv2d5u9j90kp0tu2ic8@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.bahia')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=23fu0vgmv2d5u9j90kp0tu2ic8@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2017.png" alt="Barcelona Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/83.png" alt="Barcelona Image">
                 <h2>Barcelona</h2>
-                <a onclick="logToAnalytics('2017')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=46ceb72e0b9f57fa4bfec09f23f5a3a162287393cc0ae2ff48b33c6fcd9c1f66@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.barcelona')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=46ceb72e0b9f57fa4bfec09f23f5a3a162287393cc0ae2ff48b33c6fcd9c1f66@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Bay_FC_logo.svg/800px-Bay_FC_logo.svg.png" alt="Bay (Fem) Image">
-                <h2>Bay (Fem)</h2>
-                <a onclick="logToAnalytics('64200')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=237306f982a2b1233ffaa1d7776b01a731902bb8de819b7127b2412a6cb86fb1@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/22187.png" alt="Bay FC (Fem) Image">
+                <h2>Bay FC (Fem)</h2>
+                <a onclick="logToAnalytics('bay_fc')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=237306f982a2b1233ffaa1d7776b01a731902bb8de819b7127b2412a6cb86fb1@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/963.png" alt="Bayer Leverkusen Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/131.png" alt="Bayer Leverkusen Image">
                 <h2>Bayer Leverkusen</h2>
-                <a onclick="logToAnalytics('963')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=63183c1e45a67e7b7bd2ff26f6a9a4bb902fb672a509640d8521553e85491043@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.leverkusen')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=63183c1e45a67e7b7bd2ff26f6a9a4bb902fb672a509640d8521553e85491043@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/961.png" alt="Bayern Munique Image">
-                <h2>Bayern Munique</h2>
-                <a onclick="logToAnalytics('961')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=43d48f26da7c834aab370a1b784c941e813ba2abc0cf09a525d75e67f7c18453@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/132.png" alt="Bayern de Munique  Image">
+                <h2>Bayern de Munique </h2>
+                <a onclick="logToAnalytics('ger.bayern_munich')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=43d48f26da7c834aab370a1b784c941e813ba2abc0cf09a525d75e67f7c18453@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2025.png" alt="Betis Image">
-                <h2>Betis</h2>
-                <a onclick="logToAnalytics('2025')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c9aa17ffd5aadb2f9a9daeea5ec004ce9952abdc308896ebef36df9f3bbadd35@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/107.png" alt="Bolonha Image">
+                <h2>Bolonha</h2>
+                <a onclick="logToAnalytics('ita.bologna')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8710e8f665a0077876dd63e1f5726b8fd35b819f281bba323fd4a83c62ffe4a2@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/965.png" alt="Bochum Image">
-                <h2>Bochum</h2>
-                <a onclick="logToAnalytics('965')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=cf2f4e29ffc1b3f7a2af49af27197b787bfdd294befdba093eb94ff02c1203c2@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bol.png" alt="Bolívia Image">
+                <h2>Bolívia</h2>
+                <a onclick="logToAnalytics('bol')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a220b48becc1d5efec37cb3c842f23e1bbe89d8c79e4c30989e7909c22ea7638@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1249.png" alt="Bologna Image">
-                <h2>Bologna</h2>
-                <a onclick="logToAnalytics('1249')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8710e8f665a0077876dd63e1f5726b8fd35b819f281bba323fd4a83c62ffe4a2@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/964.png" alt="Borussia Dortmund Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/124.png" alt="Borussia Dortmund Image">
                 <h2>Borussia Dortmund</h2>
-                <a onclick="logToAnalytics('964')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8a0c3a1abe00e769979634a0d2b4895de8e2d79c088bf9d45f5cfdfc3e94ef5d@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.dortmund')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8a0c3a1abe00e769979634a0d2b4895de8e2d79c088bf9d45f5cfdfc3e94ef5d@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/971.png" alt="Borussia Mönchengladbach Image">
-                <h2>Borussia Mönchengladbach</h2>
-                <a onclick="logToAnalytics('971')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f994af0d7b4aca30e759d32589c19e8ffa1b109dbc3688e525efbda79ca1febf@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/268.png" alt="Borussia Monchengladbach Image">
+                <h2>Borussia Monchengladbach</h2>
+                <a onclick="logToAnalytics('ger.borussia_mgladbach')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f994af0d7b4aca30e759d32589c19e8ffa1b109dbc3688e525efbda79ca1febf@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/323.png" alt="Botafogo Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/6086.png" alt="Botafogo Image">
                 <h2>Botafogo</h2>
-                <a onclick="logToAnalytics('323')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=icr7j6819one1dg9bssebbdsf8@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.botafogo')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=icr7j6819one1dg9bssebbdsf8@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/22827.png" alt="Botafogo sub-20 Image">
-                <h2>Botafogo sub-20</h2>
-                <a onclick="logToAnalytics('22827')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6491501f7092808a5cfcda4626ffab3af7b4d405c65cea31082d6f741cf5701b@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/711.png" alt="Bournemouth Image">
-                <h2>Bournemouth</h2>
-                <a onclick="logToAnalytics('711')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4e16896c47ff85daca1217fbcc589c9e561a671b237f82d4d18279553eb3f1ae@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/349.png" alt="Brasil Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bra.png" alt="Brasil Image">
                 <h2>Brasil</h2>
-                <a onclick="logToAnalytics('349')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3dpu2e1f08gloo7bbugkqs4t3o@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3dpu2e1f08gloo7bbugkqs4t3o@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/5967.png" alt="Brasil (Fem) Image">
-                <h2>Brasil (Fem)</h2>
-                <a onclick="logToAnalytics('5967')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=s3q7j9hluhnmqo3bbl229d0ibc@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/722.png" alt="Brentford Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/337.png" alt="Brentford Image">
                 <h2>Brentford</h2>
-                <a onclick="logToAnalytics('722')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d5b2c01bf076ef58de62c870a3004a081bb1706bc562d5ccd015efecad85587d@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.brentford')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d5b2c01bf076ef58de62c870a3004a081bb1706bc562d5ccd015efecad85587d@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/922.png" alt="Brestois Image">
-                <h2>Brestois</h2>
-                <a onclick="logToAnalytics('922')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a073da3fb75fc812ec4d742bbef96c5dde9037fa54cd30e20b8229f46afaec6f@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/6997.png" alt="Brest Image">
+                <h2>Brest</h2>
+                <a onclick="logToAnalytics('fra.brest')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a073da3fb75fc812ec4d742bbef96c5dde9037fa54cd30e20b8229f46afaec6f@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/703.png" alt="Brighton & Hove Albion Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/331.png" alt="Brighton & Hove Albion Image">
                 <h2>Brighton & Hove Albion</h2>
-                <a onclick="logToAnalytics('703')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=cfd9f0179b6fea3405d9d0d63210c1ab3783065eb78706e1b3fcf1fe22842793@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.brighton')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=cfd9f0179b6fea3405d9d0d63210c1ab3783065eb78706e1b3fcf1fe22842793@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/698.png" alt="Burnley Image">
-                <h2>Burnley</h2>
-                <a onclick="logToAnalytics('698')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f9e5a67149a37d04128d81fabb8694d510805406d5cbdc24d56adc5895a9e544@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="Bélgica Image">
+                <h2>Bélgica</h2>
+                <a onclick="logToAnalytics('bel')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3456b527e36dcb5ea0c5ffddf32d2f9ca39ff86fbf3df2912c635e414c9b3193@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2041.png" alt="Cadiz Image">
-                <h2>Cadiz</h2>
-                <a onclick="logToAnalytics('2041')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f5be10cd9847535ab1fa2beb7d81f20f034173d810ba73c99ab326b8aca578d0@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1256.png" alt="Cagliari Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2925.png" alt="Cagliari Image">
                 <h2>Cagliari</h2>
-                <a onclick="logToAnalytics('1256')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c6d524a3c0684833ff39aee0024ff2925e691080367c60a54e3357bf31aa04dc@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.cagliari')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c6d524a3c0684833ff39aee0024ff2925e691080367c60a54e3357bf31aa04dc@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2033.png" alt="Celta de Vigo Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/can.png" alt="Canadá Image">
+                <h2>Canadá</h2>
+                <a onclick="logToAnalytics('can')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0a4c324ed730861639cf55c2bc0490d747fc1aeddfa55c808b5af97ff8d603f9@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/85.png" alt="Celta de Vigo Image">
                 <h2>Celta de Vigo</h2>
-                <a onclick="logToAnalytics('2033')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d41d660eeb1a43c2be8707ae7e518d3e464f10c8221047396df69bf6dab1feeb@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.celta_vigo')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d41d660eeb1a43c2be8707ae7e518d3e464f10c8221047396df69bf6dab1feeb@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/6223.png" alt="Chapecoense Image">
-                <h2>Chapecoense</h2>
-                <a onclick="logToAnalytics('6223')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a503332d99923b561b1930f72e212d5e9d0480220bb14c44194927e79e9a48e6@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/661.png" alt="Chelsea Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/363.png" alt="Chelsea Image">
                 <h2>Chelsea</h2>
-                <a onclick="logToAnalytics('661')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8876f7eb140ed5357cb761f54530f310a88a4c871a722603959b35eb256899ac@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.chelsea')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8876f7eb140ed5357cb761f54530f310a88a4c871a722603959b35eb256899ac@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/916.png" alt="Clermont Foot Image">
-                <h2>Clermont Foot</h2>
-                <a onclick="logToAnalytics('916')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=15c6f4b0a58900836a708de40a818a35d80738237a2919298d6fd58755feec65@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/chi.png" alt="Chile Image">
+                <h2>Chile</h2>
+                <a onclick="logToAnalytics('chi')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b58aa799a44341ca434f3405748b6b8393b21d1787c4d761602929d57e67ac76@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/980.png" alt="Colônia Image">
-                <h2>Colônia</h2>
-                <a onclick="logToAnalytics('980')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=188a250900e12374a6c70514a574dfa1258a219b5e97af806d695c91870a1e82@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colômbia Image">
+                <h2>Colômbia</h2>
+                <a onclick="logToAnalytics('col')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b75cc1fcc34c6a6d92f0d441dfcb4f9f0210711096c4d92e2af2e2de4184437d@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/320.png" alt="Corinthians Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2572.png" alt="Como Image">
+                <h2>Como</h2>
+                <a onclick="logToAnalytics('ita.como')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7d4e76e75144f41dcabc52ba404643213fc2510a2498677f619c276c67a5f2cb@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/874.png" alt="Corinthians Image">
                 <h2>Corinthians</h2>
-                <a onclick="logToAnalytics('320')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=78ns8hclc8co165l56uvi8808g@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.corinthians')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=78ns8hclc8co165l56uvi8808g@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/35478.png" alt="Corinthians (Fem) Image">
-                <h2>Corinthians (Fem)</h2>
-                <a onclick="logToAnalytics('35478')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6asfvp5cke99uvatn447fjkflg@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/crc.png" alt="Costa Rica Image">
+                <h2>Costa Rica</h2>
+                <a onclick="logToAnalytics('crc')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f788e71f100f2c083ca7f63d2af40c7289a9f2e7f0c90ca28bd0362cbf20d150@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/324.png" alt="Coritiba Image">
-                <h2>Coritiba</h2>
-                <a onclick="logToAnalytics('324')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=53vvgmqnf2qs5n4phe37l070ls@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/305.png" alt="Criciúma Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/9971.png" alt="Criciúma Image">
                 <h2>Criciúma</h2>
-                <a onclick="logToAnalytics('305')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=91db98ca7cbe8b444387243698b0e92acffc500efac23a7126109632d8edc32b@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.cricima')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=91db98ca7cbe8b444387243698b0e92acffc500efac23a7126109632d8edc32b@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/304.png" alt="Cruzeiro Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cro.png" alt="Croácia Image">
+                <h2>Croácia</h2>
+                <a onclick="logToAnalytics('cro')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fb7137bb77012ff883b5e8028cdf0d81c60bb13cfeb98ba50f6c7b4e19408e0d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2022.png" alt="Cruzeiro Image">
                 <h2>Cruzeiro</h2>
-                <a onclick="logToAnalytics('304')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=htajpji9pco15osd4alonkjmpo@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.cruzeiro')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=htajpji9pco15osd4alonkjmpo@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/679.png" alt="Crystal Palace Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/384.png" alt="Crystal Palace Image">
                 <h2>Crystal Palace</h2>
-                <a onclick="logToAnalytics('679')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8e0e995badf12c4192d125b4db1543dd17a3ae50775e0418865dce15e910ef7d@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.crystal_palace')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8e0e995badf12c4192d125b4db1543dd17a3ae50775e0418865dce15e910ef7d@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/3719.png" alt="Cuiabá-MT Image">
-                <h2>Cuiabá-MT</h2>
-                <a onclick="logToAnalytics('3719')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3v4qatet6igg3bci49fghv2434@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/17313.png" alt="Cuiabá Image">
+                <h2>Cuiabá</h2>
+                <a onclick="logToAnalytics('cuiaba')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3v4qatet6igg3bci49fghv2434@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2549.png" alt="Darmstadt 98 Image">
-                <h2>Darmstadt 98</h2>
-                <a onclick="logToAnalytics('2549')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=032b500fa4bd466c099ed80794e78db551abdbb2703ea2bf8070a6011c95b8a8@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/den.png" alt="Dinamarca Image">
+                <h2>Dinamarca</h2>
+                <a onclick="logToAnalytics('den')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=247921bb849bac2587354471aa12ab442c158c8fe8c557259043132e0fe0edc6@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/979.png" alt="Eintracht Frankfurt Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/125.png" alt="Eintracht Frankfurt Image">
                 <h2>Eintracht Frankfurt</h2>
-                <a onclick="logToAnalytics('979')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e8ecdf32e9c63c8bd0a67ab1c044ecc8a312bcdbae75a86499f1cb4efeee7f50@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.frankfurt')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e8ecdf32e9c63c8bd0a67ab1c044ecc8a312bcdbae75a86499f1cb4efeee7f50@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1261.png" alt="Empoli Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2574.png" alt="Empoli Image">
                 <h2>Empoli</h2>
-                <a onclick="logToAnalytics('1261')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7c189b59361cb12007cec3450abd61b179a12b6cf1c7bbb14586752732cb8390@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.empoli')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7c189b59361cb12007cec3450abd61b179a12b6cf1c7bbb14586752732cb8390@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/4128.png" alt="Espanha (Fem) Image">
-                <h2>Espanha (Fem)</h2>
-                <a onclick="logToAnalytics('4128')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=200ad9v9983l2vj9t1pd55m8ns@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ecu.png" alt="Equador Image">
+                <h2>Equador</h2>
+                <a onclick="logToAnalytics('ecu')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fd4dbe007121bee2ad5aba7969888d9f14581c0b7f6d13b87676e8a86c85a360@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/5977.png" alt="Estados Unidos (Fem) Image">
-                <h2>Estados Unidos (Fem)</h2>
-                <a onclick="logToAnalytics('5977')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=eehtbri9cfpa87co1jipaqt758@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sco.png" alt="Escócia Image">
+                <h2>Escócia</h2>
+                <a onclick="logToAnalytics('sco')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=bcc29f8739821c93b37ccfe99332e29e8f2e835c83647c51dd3f0f9f0de97f79@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/674.png" alt="Everton Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/svk.png" alt="Eslováquia Image">
+                <h2>Eslováquia</h2>
+                <a onclick="logToAnalytics('svk')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4ae866da0bd285067b53b951ee3eab718d5093d4255784c8cb6b11ea91fbd30c@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/svn.png" alt="Eslovênia Image">
+                <h2>Eslovênia</h2>
+                <a onclick="logToAnalytics('svn')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ea0b8832142256d1cfc01f8b83f96deb563a65d8b9cb8e678093f8848caa097f@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="Espanha Image">
+                <h2>Espanha</h2>
+                <a onclick="logToAnalytics('esp')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=df870b5142b3265d8d9cba147719d06146bbfba9ad159ba4a7d6c0549913f65d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/88.png" alt="Espanyol Image">
+                <h2>Espanyol</h2>
+                <a onclick="logToAnalytics('esp.espanyol')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2dd942401659114be273d45b17799f6934b1307b3452c97a2908abcedc9ba2d2@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="Estados Unidos Image">
+                <h2>Estados Unidos</h2>
+                <a onclick="logToAnalytics('usa')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=21700b151ec1f91dd3b49067e4fe88ab78aab795c54e36fe5fb9958c6fc8a5d9@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/368.png" alt="Everton Image">
                 <h2>Everton</h2>
-                <a onclick="logToAnalytics('674')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e0ba40f96d8b62eb4f5ddbeb80825c7e538973254a2ab658ad664af9b330aacf@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.everton')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e0ba40f96d8b62eb4f5ddbeb80825c7e538973254a2ab658ad664af9b330aacf@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1259.png" alt="Fiorentina Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/109.png" alt="Fiorentina Image">
                 <h2>Fiorentina</h2>
-                <a onclick="logToAnalytics('1259')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2384dfce7830ed6645c5504d49461909524a30e2427000467b7fa28cfe512857@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.fiorentina')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2384dfce7830ed6645c5504d49461909524a30e2427000467b7fa28cfe512857@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/22/Logo_Flamengo_crest_1980-2018.png" alt="Flamengo Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/819.png" alt="Flamengo Image">
                 <h2>Flamengo</h2>
-                <a onclick="logToAnalytics('318')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8dj98snqtagrn21gar3dablrn4@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.flamengo')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8dj98snqtagrn21gar3dablrn4@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/22/Logo_Flamengo_crest_1980-2018.png" alt="Flamengo sub-20 Image">
-                <h2>Flamengo sub-20</h2>
-                <a onclick="logToAnalytics('21622')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c00a269df0771048b186f11ee8b528420eb0926dab5b00774620f750031e60f5@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/312.png" alt="Fluminense Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/3445.png" alt="Fluminense Image">
                 <h2>Fluminense</h2>
-                <a onclick="logToAnalytics('312')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=t0i944jhl8upaglfe1j8vai5hk@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.fluminense_fc')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=t0i944jhl8upaglfe1j8vai5hk@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/46189.png" alt="Fluminense (Fem) Image">
-                <h2>Fluminense (Fem)</h2>
-                <a onclick="logToAnalytics('46189')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ns9o7cq6jbfjtst0iv1rn3v3nc@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/24076.png" alt="Fluminense sub-17 Image">
-                <h2>Fluminense sub-17</h2>
-                <a onclick="logToAnalytics('24076')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9e6efeorsp3ln99iem3sanb74o@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/22802.png" alt="Fluminense sub-20 Image">
-                <h2>Fluminense sub-20</h2>
-                <a onclick="logToAnalytics('22802')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5m7b544dqc0fdhs8nsfm6kmek8@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/327.png" alt="Fortaleza Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/6272.png" alt="Fortaleza Image">
                 <h2>Fortaleza</h2>
-                <a onclick="logToAnalytics('327')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fcn6nno315icg3aaui04s9ru78@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.fortaleza')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fcn6nno315icg3aaui04s9ru78@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/970.png" alt="Freiburg Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="França Image">
+                <h2>França</h2>
+                <a onclick="logToAnalytics('fra')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=354e70ba39e41ee133232057045b8b48a4123fca34f92816a1d7a33f7e2356ef@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/126.png" alt="Freiburg Image">
                 <h2>Freiburg</h2>
-                <a onclick="logToAnalytics('970')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=38d4ffb965c75c39e500fecbe32b7eb683a96bbecbfd635d7681eb7978400ec9@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.freiburg')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=38d4ffb965c75c39e500fecbe32b7eb683a96bbecbfd635d7681eb7978400ec9@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2981.png" alt="Frosinone Image">
-                <h2>Frosinone</h2>
-                <a onclick="logToAnalytics('2981')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0278b2a702728d52b9ba5c0be106fbdd60a6833db612fcd2a44bdc26107d7802@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/667.png" alt="Fulham Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/370.png" alt="Fulham Image">
                 <h2>Fulham</h2>
-                <a onclick="logToAnalytics('667')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3f3874e2980d18c7638d58b7dd24561b4bc7f25b10ac20c3fa9f165404a1baf8@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.fulham')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3f3874e2980d18c7638d58b7dd24561b4bc7f25b10ac20c3fa9f165404a1baf8@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1276.png" alt="Genoa Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/3263.png" alt="Genoa Image">
                 <h2>Genoa</h2>
-                <a onclick="logToAnalytics('1276')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8deffdfa6b034224e5b4d3c09d07ba81bb0c93ca9b3732484c683a542f206ccb@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.genoa')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8deffdfa6b034224e5b4d3c09d07ba81bb0c93ca9b3732484c683a542f206ccb@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2039.png" alt="Getafe Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/geo.png" alt="Georgia Image">
+                <h2>Georgia</h2>
+                <a onclick="logToAnalytics('geo')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e6dc0db0ec781d58e3cea5241ab57364f991e9d12063ec8c210d2f8f900fed97@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2922.png" alt="Getafe Image">
                 <h2>Getafe</h2>
-                <a onclick="logToAnalytics('2039')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b9d962c9f3ce677f06103ce024f8d6e154213314a55b6e5150c2d3e7f724ed35@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.getafe')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b9d962c9f3ce677f06103ce024f8d6e154213314a55b6e5150c2d3e7f724ed35@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2101.png" alt="Girona Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/9812.png" alt="Girona Image">
                 <h2>Girona</h2>
-                <a onclick="logToAnalytics('2101')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=605f22e387855c4c106ff4cffc74c27330fc1a0891ce6cc5fc4afd040169aa81@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.girona')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=605f22e387855c4c106ff4cffc74c27330fc1a0891ce6cc5fc4afd040169aa81@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/307.png" alt="Goiás Image">
-                <h2>Goiás</h2>
-                <a onclick="logToAnalytics('307')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ihfrsc3l265g2i25vpba9iob7k@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/7072.png" alt="Granada Image">
-                <h2>Granada</h2>
-                <a onclick="logToAnalytics('7072')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5292fffd46dd0bfc4b4e90ca4b99eb650d81057079774dd773c5f633cc5dfbda@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/313.png" alt="Grêmio Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/6273.png" alt="Grêmio Image">
                 <h2>Grêmio</h2>
-                <a onclick="logToAnalytics('313')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=69beum2ubj3m7a7c65gfkk64ho@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.gremio')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=69beum2ubj3m7a7c65gfkk64ho@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/5862.png" alt="Heidenheim Image">
-                <h2>Heidenheim</h2>
-                <a onclick="logToAnalytics('5862')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e54738c75c288bf144465221cae5c4f865167d6d5e8208b52800f125074cfad4@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/119.png" alt="Hellas Verona Image">
+                <h2>Hellas Verona</h2>
+                <a onclick="logToAnalytics('ita.verona')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ab1ba5fdd73373a2c7f4138603d32d2bf0e95a050fbe36c97e672d44d3d172a4@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1001.png" alt="Hoffenheim Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7911.png" alt="Hoffenheim Image">
                 <h2>Hoffenheim</h2>
-                <a onclick="logToAnalytics('1001')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d881fc3c85cffd0c2a23e483c82610ebc0e054884d7d9fbb7bd3bf00e4efecbb@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.tsg_hoffenheim')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d881fc3c85cffd0c2a23e483c82610ebc0e054884d7d9fbb7bd3bf00e4efecbb@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/308.png" alt="Internacional Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ned.png" alt="Holanda Image">
+                <h2>Holanda</h2>
+                <a onclick="logToAnalytics('ned')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=23ee19c14eb556b3b448b846b814930c53bd425cc30523d1f00ec79ab30309ec@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/7884.png" alt="Holstein Kiel Image">
+                <h2>Holstein Kiel</h2>
+                <a onclick="logToAnalytics('team.holstein-kiel')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=31c6ea9e8c38225996980061bf8f822b73910d99a2c579397f1de87cdd51e397@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/hun.png" alt="Hungria Image">
+                <h2>Hungria</h2>
+                <a onclick="logToAnalytics('hun')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5208a3fbf35a3b1e1b29fcfe436b25029635a519a34ec57a1e35a5a1b2ea0b00@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="Inglaterra Image">
+                <h2>Inglaterra</h2>
+                <a onclick="logToAnalytics('eng')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=61c5ff60eac36b84e6ace03a4061d10e83473f33e59e0201550d36ea213cc425@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/1936.png" alt="Internacional Image">
                 <h2>Internacional</h2>
-                <a onclick="logToAnalytics('308')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0hlg38ktusm89k1387fqbrc23g@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.internacional')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0hlg38ktusm89k1387fqbrc23g@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1244.png" alt="Internazionale Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/110.png" alt="Internazionale Image">
                 <h2>Internazionale</h2>
-                <a onclick="logToAnalytics('1244')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f3caaf173c700863d0c9536ac4fd2feecd95cf2441ad0aee81e0fc91f0df3312@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.inter_milan')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f3caaf173c700863d0c9536ac4fd2feecd95cf2441ad0aee81e0fc91f0df3312@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/314.png" alt="Juventude Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/373.png" alt="Ipswich Town Image">
+                <h2>Ipswich Town</h2>
+                <a onclick="logToAnalytics('eng.ipswich')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d9984f7d0ea2d34f16fdd2cb9812a405785377efd2cc78c77106e75bc13ab943@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ita.png" alt="Itália Image">
+                <h2>Itália</h2>
+                <a onclick="logToAnalytics('ita')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=30975e0daeb7ff7d8dc75af166a86457e90b4cbcb2eb8b814cfdaa84b5cf020b@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/jam.png" alt="Jamaica Image">
+                <h2>Jamaica</h2>
+                <a onclick="logToAnalytics('jam')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=304417cf79e8f1242e1f627fa76845da3ae32c58ecde4b73d07fc6e6944ceb60@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/6270.png" alt="Juventude Image">
                 <h2>Juventude</h2>
-                <a onclick="logToAnalytics('314')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0517dd89f40b98850af78343c5cbd4d4e88175d31a5ecd71ee6c589824933266@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.juventude')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0517dd89f40b98850af78343c5cbd4d4e88175d31a5ecd71ee6c589824933266@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1242.png" alt="Juventus Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/111.png" alt="Juventus Image">
                 <h2>Juventus</h2>
-                <a onclick="logToAnalytics('1242')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a7919a26b69d170955669fa5df97eba8b363fb2fbd5ab46cf3c2c035a9441f80@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.juventus')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a7919a26b69d170955669fa5df97eba8b363fb2fbd5ab46cf3c2c035a9441f80@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2055.png" alt="Las Palmas Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/98.png" alt="Las Palmas Image">
                 <h2>Las Palmas</h2>
-                <a onclick="logToAnalytics('2055')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9cca0ca01156e35ff18c1172a6108d830a305d3d71707d77ece3048e7584304c@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.las_palmas')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9cca0ca01156e35ff18c1172a6108d830a305d3d71707d77ece3048e7584304c@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1245.png" alt="Lazio Image">
-                <h2>Lazio</h2>
-                <a onclick="logToAnalytics('1245')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e787bc797cf0474dd72e438dd80e4a06a60edeb185f54819a2d932e4fce57a4c@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/3236.png" alt="Le Havre AC Image">
+                <h2>Le Havre AC</h2>
+                <a onclick="logToAnalytics('fra.le_havre_ac')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5db42b1f7decef1af8f3b982dc415fba2b95e87b4afd01abe82dd2c5c5edfe71@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/912.png" alt="Le Havre Image">
-                <h2>Le Havre</h2>
-                <a onclick="logToAnalytics('912')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5db42b1f7decef1af8f3b982dc415fba2b95e87b4afd01abe82dd2c5c5edfe71@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1251.png" alt="Lecce Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/113.png" alt="Lecce Image">
                 <h2>Lecce</h2>
-                <a onclick="logToAnalytics('1251')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=dc4b6b67e0e0067c0504fb45b519812a04eed2fa3f4a92e4249044fa275dcb1f@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.lecce')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=dc4b6b67e0e0067c0504fb45b519812a04eed2fa3f4a92e4249044fa275dcb1f@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/892.png" alt="Lens Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/17534.png" alt="Leganés Image">
+                <h2>Leganés</h2>
+                <a onclick="logToAnalytics('esp.leganes')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c5c5873a131a99567c6a52a50ce29d7dffb4db6fc963e23e7faf70fc0abe839a@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/375.png" alt="Leicester City Image">
+                <h2>Leicester City</h2>
+                <a onclick="logToAnalytics('eng.leicester')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6ba15752c66e2cc8de38662cc3d6cd7120426e55fadbf5715ff8472ad49089b0@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/175.png" alt="Lens Image">
                 <h2>Lens</h2>
-                <a onclick="logToAnalytics('892')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=770087ffc73b5178de401351468c1e1e7f02a040ac3217555ac1c8746175c418@group.calendar.google.com">
+                <a onclick="logToAnalytics('fra.lens')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=770087ffc73b5178de401351468c1e1e7f02a040ac3217555ac1c8746175c418@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/895.png" alt="Lille Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/166.png" alt="Lille Image">
                 <h2>Lille</h2>
-                <a onclick="logToAnalytics('895')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9b347ed5731800870511e5862f910e4045e30de5cf526facc4e9ef0b19c6172b@group.calendar.google.com">
+                <a onclick="logToAnalytics('fra.lille')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9b347ed5731800870511e5862f910e4045e30de5cf526facc4e9ef0b19c6172b@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/663.png" alt="Liverpool Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/364.png" alt="Liverpool Image">
                 <h2>Liverpool</h2>
-                <a onclick="logToAnalytics('663')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=711b8b1ea7e1b0e44f1232acd06c0a6cfb60db747097b1c72160fc4c3f53d573@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.liverpool')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=711b8b1ea7e1b0e44f1232acd06c0a6cfb60db747097b1c72160fc4c3f53d573@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/907.png" alt="Lorient Image">
-                <h2>Lorient</h2>
-                <a onclick="logToAnalytics('907')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c969408060ab7e8289f4725baf55bad649c175d8db22f9887228c735b003861c@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/712.png" alt="Luton Town Image">
-                <h2>Luton Town</h2>
-                <a onclick="logToAnalytics('712')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=85082e4b2824d5c722b70501deffb49e3620ea16dd5d5a700287bca8f02ca49e@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/884.png" alt="Lyon Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/167.png" alt="Lyon Image">
                 <h2>Lyon</h2>
-                <a onclick="logToAnalytics('884')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6d0375ba5e279cf039a11668dd585a49e0d0c83a41f837698638c4ef431472d0@group.calendar.google.com">
+                <a onclick="logToAnalytics('fra.lyon')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6d0375ba5e279cf039a11668dd585a49e0d0c83a41f837698638c4ef431472d0@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/977.png" alt="Mainz Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/112.png" alt="Lázio Image">
+                <h2>Lázio</h2>
+                <a onclick="logToAnalytics('ita.lazio_rome')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e787bc797cf0474dd72e438dd80e4a06a60edeb185f54819a2d932e4fce57a4c@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2950.png" alt="Mainz Image">
                 <h2>Mainz</h2>
-                <a onclick="logToAnalytics('977')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f613655a9053165a1c32a113ff1e6c96010e615b9f59ee5b8f710f4c64a99844@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.mainz')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f613655a9053165a1c32a113ff1e6c96010e615b9f59ee5b8f710f4c64a99844@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2027.png" alt="Mallorca Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/84.png" alt="Mallorca Image">
                 <h2>Mallorca</h2>
-                <a onclick="logToAnalytics('2027')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4be560f217a5b717d5ae64d144dce23ad98cd498892bf4c6247874b4da366881@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.mallorca')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4be560f217a5b717d5ae64d144dce23ad98cd498892bf4c6247874b4da366881@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/676.png" alt="Manchester City Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/382.png" alt="Manchester City Image">
                 <h2>Manchester City</h2>
-                <a onclick="logToAnalytics('676')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3f542ceec572e17159566f20f86000a24d809d8b0c9d50a3285709bfa321b664@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.man_city')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3f542ceec572e17159566f20f86000a24d809d8b0c9d50a3285709bfa321b664@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/662.png" alt="Manchester United Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" alt="Manchester United Image">
                 <h2>Manchester United</h2>
-                <a onclick="logToAnalytics('662')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=458c5a86ce7fee85e45567edb042330fcb07b3358aa8c37587fb4ad907e0c546@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.man_utd')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=458c5a86ce7fee85e45567edb042330fcb07b3358aa8c37587fb4ad907e0c546@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/896.png" alt="Metz Image">
-                <h2>Metz</h2>
-                <a onclick="logToAnalytics('896')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2a0c1540b20b2d8a3894e3edca57b8997bd17eb5e5a55d2f47a612e4c02d3a12@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/176.png" alt="Marseille Image">
+                <h2>Marseille</h2>
+                <a onclick="logToAnalytics('fra.marseille')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b1f27d3766b42c4f14fe75c1418c684a5199e1ef569cc1eb0c7dea95f164d02c@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1240.png" alt="Milan Image">
-                <h2>Milan</h2>
-                <a onclick="logToAnalytics('1240')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fa054ee0f6a5dcc113cdd689a736cb01b62769afdf414777c81aa36aefb9b748@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/885.png" alt="Monaco Image">
-                <h2>Monaco</h2>
-                <a onclick="logToAnalytics('885')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f5f8cd513d848096a4018a59211e51dd5e7089078f0f2ccc9d3eb1fce652aefa@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/906.png" alt="Montpellier Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/274.png" alt="Montpellier Image">
                 <h2>Montpellier</h2>
-                <a onclick="logToAnalytics('906')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6bb3f04f51720860252bfe97b49eb8defc5acf2bd56065170a1b16745ba22a57@group.calendar.google.com">
+                <a onclick="logToAnalytics('fra.montpellier')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6bb3f04f51720860252bfe97b49eb8defc5acf2bd56065170a1b16745ba22a57@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2355.png" alt="Monza Brianza Image">
-                <h2>Monza Brianza</h2>
-                <a onclick="logToAnalytics('2355')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9f2e4f60ca7771ac96a16394b4141a712f39fe7c69cf865cabd71b931820dbbf@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/4007.png" alt="Monza Image">
+                <h2>Monza</h2>
+                <a onclick="logToAnalytics('ita.monza')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9f2e4f60ca7771ac96a16394b4141a712f39fe7c69cf865cabd71b931820dbbf@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/889.png" alt="Nantes Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="México Image">
+                <h2>México</h2>
+                <a onclick="logToAnalytics('mex')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=bc0d0bb9b3585a0990571413e6c515f090a0a52c6ac70416baf429a04dc3638d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/165.png" alt="Nantes Image">
                 <h2>Nantes</h2>
-                <a onclick="logToAnalytics('889')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=589089e5940a2521858474dc4d6106526228fa918991244ec3b39ceed2a38a89@group.calendar.google.com">
+                <a onclick="logToAnalytics('fra.nantes')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=589089e5940a2521858474dc4d6106526228fa918991244ec3b39ceed2a38a89@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1270.png" alt="Napoli Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/114.png" alt="Napoli Image">
                 <h2>Napoli</h2>
-                <a onclick="logToAnalytics('1270')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=afd0738a29d8a8824b6a7a67dc03c87f24c189de7b008b7e591bc4f115a62768@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.napoli')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=afd0738a29d8a8824b6a7a67dc03c87f24c189de7b008b7e591bc4f115a62768@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/664.png" alt="Newcastle Image">
-                <h2>Newcastle</h2>
-                <a onclick="logToAnalytics('664')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=74c84cdfda250bc909f480d8e43cfc02cba93f73949fbaf5c54f8599bc600856@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/361.png" alt="Newcastle United Image">
+                <h2>Newcastle United</h2>
+                <a onclick="logToAnalytics('eng.newcastle')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=74c84cdfda250bc909f480d8e43cfc02cba93f73949fbaf5c54f8599bc600856@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/894.png" alt="Nice Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2502.png" alt="Nice Image">
                 <h2>Nice</h2>
-                <a onclick="logToAnalytics('894')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=21b147274d5dae23c0cb4ee7bd91d682daa04a86f9235d230b13935d42b39b07@group.calendar.google.com">
+                <a onclick="logToAnalytics('fra.nice')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=21b147274d5dae23c0cb4ee7bd91d682daa04a86f9235d230b13935d42b39b07@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/694.png" alt="Nottingham Forest Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/393.png" alt="Nottingham Forest Image">
                 <h2>Nottingham Forest</h2>
-                <a onclick="logToAnalytics('694')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e5c107e3561c0cccccf47bd108203aa59f8bf7e96e696348ae3d361b527574d8@group.calendar.google.com">
+                <a onclick="logToAnalytics('eng.nottm_forest')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e5c107e3561c0cccccf47bd108203aa59f8bf7e96e696348ae3d361b527574d8@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/890.png" alt="Olympique de Marseille Image">
-                <h2>Olympique de Marseille</h2>
-                <a onclick="logToAnalytics('890')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b1f27d3766b42c4f14fe75c1418c684a5199e1ef569cc1eb0c7dea95f164d02c@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2022.png" alt="Osasuna Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/97.png" alt="Osasuna Image">
                 <h2>Osasuna</h2>
-                <a onclick="logToAnalytics('2022')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c82ea568f24dc7cd112d7687d8f4bf9dbe72e934d9b7543e3e7f5c7867eddb61@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.osasuna')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c82ea568f24dc7cd112d7687d8f4bf9dbe72e934d9b7543e3e7f5c7867eddb61@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/310.png" alt="Palmeiras Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2029.png" alt="Palmeiras Image">
                 <h2>Palmeiras</h2>
-                <a onclick="logToAnalytics('310')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=jl855ab36sa5epd7k8m9m0ssl8@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.palmeiras')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=jl855ab36sa5epd7k8m9m0ssl8@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/309.png" alt="Paraná Image">
-                <h2>Paraná</h2>
-                <a onclick="logToAnalytics('309')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=54ed1f1ac5e6c3ee371e933ef05ccb0e2fa7a67a998be2eec2ba46a96181d118@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panamá Image">
+                <h2>Panamá</h2>
+                <a onclick="logToAnalytics('pan')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d43df24dd1ea0ef00150793367c851712cd25bb0a311b08eff41f11a9c20dc93@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/886.png" alt="Paris Saint Germain Image">
-                <h2>Paris Saint Germain</h2>
-                <a onclick="logToAnalytics('886')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0e232bbb862cd2c2f24f7bf774f47eda4ad882b959eacf6b54dd429f1afc54f3@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="Paraguai Image">
+                <h2>Paraguai</h2>
+                <a onclick="logToAnalytics('par')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3dc3c5b3c08ce49fc7c8e02c64d8c8c5b9b1dcd6a8c5d25e223b8c450ea562db@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1678.png" alt="Porto Image">
-                <h2>Porto</h2>
-                <a onclick="logToAnalytics('1678')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=08600030e9d49c566ec34e70d529e2386f344df0aa84473ff5372068bdb70677@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/160.png" alt="Paris Saint-Germain Image">
+                <h2>Paris Saint-Germain</h2>
+                <a onclick="logToAnalytics('fra.psg')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0e232bbb862cd2c2f24f7bf774f47eda4ad882b959eacf6b54dd429f1afc54f3@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/13410.png" alt="RB Leipzig Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/115.png" alt="Parma Image">
+                <h2>Parma</h2>
+                <a onclick="logToAnalytics('ita.parma')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=69b9049b8fe812810ace8a88f2f3ac14b25c645de0c126783cd489e7333081a0@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/per.png" alt="Peru Image">
+                <h2>Peru</h2>
+                <a onclick="logToAnalytics('per')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=584cc16de1a73298cf4fb3ad15584c1c8100cc06d104a78f5101d7bcab0bb12b@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/pol.png" alt="Polônia Image">
+                <h2>Polônia</h2>
+                <a onclick="logToAnalytics('pol')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0be1b2c24b174a882d353302bfdbdc437775368a07daa22ba5d383257e929597@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/por.png" alt="Portugal Image">
+                <h2>Portugal</h2>
+                <a onclick="logToAnalytics('por')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6b5c027c8f1645c0286ade351f5baa08abdba146419f4f959ae7b10501c9875d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/11420.png" alt="RB Leipzig Image">
                 <h2>RB Leipzig</h2>
-                <a onclick="logToAnalytics('13410')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8a78365c3d89fff264728bbbfb1971ef2992fa5fd397bd6c00b5b719fafe4e6f@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.rb_leipzig')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8a78365c3d89fff264728bbbfb1971ef2992fa5fd397bd6c00b5b719fafe4e6f@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2054.png" alt="Rayo Vallecano Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/101.png" alt="Rayo Vallecano Image">
                 <h2>Rayo Vallecano</h2>
-                <a onclick="logToAnalytics('2054')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=64a762a88d95738349797dc12fa6f05ebb178d993b24c1fa426d642988ea5258@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.rayo_vallecano')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=64a762a88d95738349797dc12fa6f05ebb178d993b24c1fa426d642988ea5258@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2016.png" alt="Real Madrid Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/244.png" alt="Real Betis Image">
+                <h2>Real Betis</h2>
+                <a onclick="logToAnalytics('esp.betis_sevilla')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c9aa17ffd5aadb2f9a9daeea5ec004ce9952abdc308896ebef36df9f3bbadd35@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/86.png" alt="Real Madrid Image">
                 <h2>Real Madrid</h2>
-                <a onclick="logToAnalytics('2016')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2808efb0bd89db7bb00d26cf5f2d92bb95fd1d1534adff14362f169032e14103@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.real_madrid')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2808efb0bd89db7bb00d26cf5f2d92bb95fd1d1534adff14362f169032e14103@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2028.png" alt="Real Sociedad Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/89.png" alt="Real Sociedad Image">
                 <h2>Real Sociedad</h2>
-                <a onclick="logToAnalytics('2028')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a1530ee333d218eea5b754160b7b380d663a279600ab89ac8ced2fd1b16c420c@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.real_sociedad')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a1530ee333d218eea5b754160b7b380d663a279600ab89ac8ced2fd1b16c420c@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2827.png" alt="Red Bull Bragantino Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/95.png" alt="Real Valladolid Image">
+                <h2>Real Valladolid</h2>
+                <a onclick="logToAnalytics('esp.valladolid')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=212df3ab3456b0a6f964bf53a5eb37f614b65d31d1cada70a94528c31a6e8b7b@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/6079.png" alt="Red Bull Bragantino Image">
                 <h2>Red Bull Bragantino</h2>
-                <a onclick="logToAnalytics('2827')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=v99vqgo84nl054246i3hf1brj4@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.bragantino')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=v99vqgo84nl054246i3hf1brj4@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/893.png" alt="Rennes Image">
-                <h2>Rennes</h2>
-                <a onclick="logToAnalytics('893')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3628119439627eddd6d762ea4d6744cb0c42b05bb7793d3e57a99dc417c76df2@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cze.png" alt="República Tcheca Image">
+                <h2>República Tcheca</h2>
+                <a onclick="logToAnalytics('cze')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=258131ffd545b966262afc3844b9e062a1c8a5737749baf251d84e79251e27d8@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1241.png" alt="Roma Image">
-                <h2>Roma</h2>
-                <a onclick="logToAnalytics('1241')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6a6d5a763abc30ea32a8f72db057a97978af9e5a5ea5298ca3e31a5ec1474b5d@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/rom.png" alt="Romênia Image">
+                <h2>Romênia</h2>
+                <a onclick="logToAnalytics('rom')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4a823fb7fa99250a32739c87f0e7e374181bf2f96deab41b30e1553b393a52e7@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2276.png" alt="SJ Earthquakes Image">
-                <h2>SJ Earthquakes</h2>
-                <a onclick="logToAnalytics('2276')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ch1rcaeavjjdvvlqnu9252av80@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/178.png" alt="Saint-Etienne Image">
+                <h2>Saint-Etienne</h2>
+                <a onclick="logToAnalytics('fra.st_etienne')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=44824c8c3e83cc4dbe0a835cd266a82ab3294080c51f58b6f323ac3ed3ff694d@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1275.png" alt="Salernitana Image">
-                <h2>Salernitana</h2>
-                <a onclick="logToAnalytics('1275')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6ff5a96439affc0a129924f85fdd8e2058d773d279285f728b74ef322bb50b67@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/191.png" alt="San Jose Earthquakes Image">
+                <h2>San Jose Earthquakes</h2>
+                <a onclick="logToAnalytics('usa.san_jose')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ch1rcaeavjjdvvlqnu9252av80@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/325.png" alt="Santa Cruz Image">
-                <h2>Santa Cruz</h2>
-                <a onclick="logToAnalytics('325')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=v5un08kaqh73mj20ue658lrmuc@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
-                </a>
-            </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/319.png" alt="Santos Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2674.png" alt="Santos Image">
                 <h2>Santos</h2>
-                <a onclick="logToAnalytics('319')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f8cdsjfdevg4m5oee6cdjmsjmo@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.santos')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f8cdsjfdevg4m5oee6cdjmsjmo@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/5681.png" alt="Sassuolo Image">
-                <h2>Sassuolo</h2>
-                <a onclick="logToAnalytics('5681')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4fddd7df13abbd67c1c9f21b4725ef204f74747465cb30822e10ae556ac0a904@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/243.png" alt="Sevilla FC Image">
+                <h2>Sevilla FC</h2>
+                <a onclick="logToAnalytics('esp.fc_sevilla')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2496c36ca5b7c126dec0b153326f3a4c4ad28c3fc542e085750524eca851911d@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2021.png" alt="Sevilla Image">
-                <h2>Sevilla</h2>
-                <a onclick="logToAnalytics('2021')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2496c36ca5b7c126dec0b153326f3a4c4ad28c3fc542e085750524eca851911d@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/376.png" alt="Southampton Image">
+                <h2>Southampton</h2>
+                <a onclick="logToAnalytics('eng.southampton')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=215515c57728bade9c2734b3624508720a0e079064f155144a6abbce7de0c7f7@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/687.png" alt="Sheffield United Image">
-                <h2>Sheffield United</h2>
-                <a onclick="logToAnalytics('687')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=87182d16dd47008b5c8e4c7f063bd29fe60587b9d15df5f7599970425cf8d8c0@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/270.png" alt="St Pauli Image">
+                <h2>St Pauli</h2>
+                <a onclick="logToAnalytics('ger.st_pauli')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3775ec5a0df9889ba996ee5b7d4097262db60b1e91d180cfd2a87e69809cf363@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/921.png" alt="Stade de Reims Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/169.png" alt="Stade Rennais Image">
+                <h2>Stade Rennais</h2>
+                <a onclick="logToAnalytics('fra.rennes')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3628119439627eddd6d762ea4d6744cb0c42b05bb7793d3e57a99dc417c76df2@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/3243.png" alt="Stade de Reims Image">
                 <h2>Stade de Reims</h2>
-                <a onclick="logToAnalytics('921')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4a40a84c278748d0b74710b4f195d047e2839eb92c10c0b51d71926dad4cf352@group.calendar.google.com">
+                <a onclick="logToAnalytics('fra.stade_de_reims')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4a40a84c278748d0b74710b4f195d047e2839eb92c10c0b51d71926dad4cf352@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/898.png" alt="Strasbourg Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/180.png" alt="Strasbourg Image">
                 <h2>Strasbourg</h2>
-                <a onclick="logToAnalytics('898')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=31c4436a2ef9fb063573a7e9d4d3f89659d1032f4e0324b3915e1b842566aee5@group.calendar.google.com">
+                <a onclick="logToAnalytics('fra.strasbourg')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=31c4436a2ef9fb063573a7e9d4d3f89659d1032f4e0324b3915e1b842566aee5@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/962.png" alt="Stuttgart Image">
-                <h2>Stuttgart</h2>
-                <a onclick="logToAnalytics('962')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3e6cd58959c2ccda417f1521504251df41c926aef157eb1a7a6f7367c07ccfd4@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sui.png" alt="Suíça Image">
+                <h2>Suíça</h2>
+                <a onclick="logToAnalytics('sui')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4012a1ca2c717f4198b1fde86b3bfa60cbf5a4ed3f318568a9f3bf402d61232b@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/302.png" alt="São Paulo Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2026.png" alt="São Paulo Image">
                 <h2>São Paulo</h2>
-                <a onclick="logToAnalytics('302')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4hm6j5tc4i136l7g266scvof00@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.sao_paulo')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4hm6j5tc4i136l7g266scvof00@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1268.png" alt="Torino Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sba.png" alt="Sérvia Image">
+                <h2>Sérvia</h2>
+                <a onclick="logToAnalytics('sba')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=48569a45dc55a95caaaea89a9dde32e65005a6bb74482d062d596c91997fded2@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/239.png" alt="Torino Image">
                 <h2>Torino</h2>
-                <a onclick="logToAnalytics('1268')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5499fc1d88c98487a12e3ecadffc654b19e2d640609309b4b516ac95a4a84d38@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.torino')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5499fc1d88c98487a12e3ecadffc654b19e2d640609309b4b516ac95a4a84d38@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/675.png" alt="Tottenham Image">
-                <h2>Tottenham</h2>
-                <a onclick="logToAnalytics('675')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ff839c84acf9d932c6236b4ffd6faacb14e0ec6ed91b1e293c3c64a398c204a6@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/367.png" alt="Tottenham Hotspur Image">
+                <h2>Tottenham Hotspur</h2>
+                <a onclick="logToAnalytics('eng.tottenham')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ff839c84acf9d932c6236b4ffd6faacb14e0ec6ed91b1e293c3c64a398c204a6@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/899.png" alt="Toulouse Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/179.png" alt="Toulouse Image">
                 <h2>Toulouse</h2>
-                <a onclick="logToAnalytics('899')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7808e708c41671ea69acdf62478707289fcfe51d0be9559c73ac9a15d3e343d8@group.calendar.google.com">
+                <a onclick="logToAnalytics('fra.toulouse')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7808e708c41671ea69acdf62478707289fcfe51d0be9559c73ac9a15d3e343d8@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1246.png" alt="Udinese Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/tur.png" alt="Turquia Image">
+                <h2>Turquia</h2>
+                <a onclick="logToAnalytics('tur')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=06a8fec7f31d771401cdc835dfed80547bc937779cb885dbe51b2bb899bc7548@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ukr.png" alt="Ucrânia Image">
+                <h2>Ucrânia</h2>
+                <a onclick="logToAnalytics('ukr')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=0a49f41d54e846f938d71acccf16e066c9085f33db45b1a13b3d43d777fc9e9b@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/118.png" alt="Udinese Image">
                 <h2>Udinese</h2>
-                <a onclick="logToAnalytics('1246')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a50ab7db0dcb15734e3fd327a818d5bed0645e8d25347b8be399e5bbe5c190ce@group.calendar.google.com">
+                <a onclick="logToAnalytics('ita.udinese')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a50ab7db0dcb15734e3fd327a818d5bed0645e8d25347b8be399e5bbe5c190ce@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1026.png" alt="Union Berlin Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/598.png" alt="Union Berlin Image">
                 <h2>Union Berlin</h2>
-                <a onclick="logToAnalytics('1026')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5393369793b26dd04da7b7e2003baf4559965c9741cb035ff794055b208084aa@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.fc_union_berlin')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5393369793b26dd04da7b7e2003baf4559965c9741cb035ff794055b208084aa@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2015.png" alt="Valencia Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/uru.png" alt="Uruguai Image">
+                <h2>Uruguai</h2>
+                <a onclick="logToAnalytics('uru')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=1cd3d4c30a70bee9642c060daf639360a28c51bcdc267dfd956ccf4a79e477dd@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/94.png" alt="Valencia Image">
                 <h2>Valencia</h2>
-                <a onclick="logToAnalytics('2015')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=662c749f866892d1154650485427b9d3cc504b9b412fc88431bd6ef54a00dfac@group.calendar.google.com">
+                <a onclick="logToAnalytics('esp.valencia')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=662c749f866892d1154650485427b9d3cc504b9b412fc88431bd6ef54a00dfac@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://upload.wikimedia.org/wikipedia/pt/a/ac/CRVascodaGama.png" alt="Vasco da Gama Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/3454.png" alt="Vasco da Gama Image">
                 <h2>Vasco da Gama</h2>
-                <a onclick="logToAnalytics('321')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=dg051pak6enqt7umubsfedjdbc@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.cr_vasco_da_gama')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=dg051pak6enqt7umubsfedjdbc@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://upload.wikimedia.org/wikipedia/pt/a/ac/CRVascodaGama.png" alt="Vasco da Gama sub-20 Image">
-                <h2>Vasco da Gama sub-20</h2>
-                <a onclick="logToAnalytics('22815')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b283e2141b431524a9f84ae0531a8a59fc2c7b62d887908bcc147d42b9e92e0d@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/17530.png" alt="Venezia Image">
+                <h2>Venezia</h2>
+                <a onclick="logToAnalytics('f.b.c_unione_venezia')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d5eb78b33799517449f217b3a509e454f24727fa5344079d2fa34bb37749d51c@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/1277.png" alt="Verona Image">
-                <h2>Verona</h2>
-                <a onclick="logToAnalytics('1277')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ab1ba5fdd73373a2c7f4138603d32d2bf0e95a050fbe36c97e672d44d3d172a4@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ven.png" alt="Venezuela Image">
+                <h2>Venezuela</h2>
+                <a onclick="logToAnalytics('ven')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b28814dffa15f0a4c7c41b0b7137a47af31d8cb5745d444fd2f167a165ca109d@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/2023.png" alt="Villarreal Image">
-                <h2>Villarreal</h2>
-                <a onclick="logToAnalytics('2023')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=372232c51562b317366a72fa5c447dd1e317fa93f7f120a7b930681ea5dc1c5e@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/134.png" alt="VfB Stuttgart Image">
+                <h2>VfB Stuttgart</h2>
+                <a onclick="logToAnalytics('ger.stuttgart')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3e6cd58959c2ccda417f1521504251df41c926aef157eb1a7a6f7367c07ccfd4@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/306.png" alt="Vitória Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/121.png" alt="VfL Bochum Image">
+                <h2>VfL Bochum</h2>
+                <a onclick="logToAnalytics('ger.vfl_bochum')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=cf2f4e29ffc1b3f7a2af49af27197b787bfdd294befdba093eb94ff02c1203c2@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/102.png" alt="Villareal Image">
+                <h2>Villareal</h2>
+                <a onclick="logToAnalytics('esp.villarreal')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=372232c51562b317366a72fa5c447dd1e317fa93f7f120a7b930681ea5dc1c5e@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/3457.png" alt="Vitória Image">
                 <h2>Vitória</h2>
-                <a onclick="logToAnalytics('306')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=89924f9199b301c96a3238f7e4d230e1c3a05eacb1daddaf25ab5b668eec0db7@group.calendar.google.com">
+                <a onclick="logToAnalytics('bra.ec_vitoria')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=89924f9199b301c96a3238f7e4d230e1c3a05eacb1daddaf25ab5b668eec0db7@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/960.png" alt="Werder Bremen Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/137.png" alt="Werder Bremen Image">
                 <h2>Werder Bremen</h2>
-                <a onclick="logToAnalytics('960')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b0dbcf4aff72c97c08484845fa1ae59a8bed39d499ddba0383940dfb0d9fb19d@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.werder_bremen')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=b0dbcf4aff72c97c08484845fa1ae59a8bed39d499ddba0383940dfb0d9fb19d@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/684.png" alt="West Ham Image">
-                <h2>West Ham</h2>
-                <a onclick="logToAnalytics('684')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=371c0861915ee911be533de7c662b2b8dc10654f5b9497ed8cb5b7f323870a43@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/371.png" alt="West Ham United Image">
+                <h2>West Ham United</h2>
+                <a onclick="logToAnalytics('eng.west_ham')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=371c0861915ee911be533de7c662b2b8dc10654f5b9497ed8cb5b7f323870a43@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/968.png" alt="Wolfsburg Image">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/138.png" alt="Wolfsburg Image">
                 <h2>Wolfsburg</h2>
-                <a onclick="logToAnalytics('968')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4072933c31e54ea96ea8b68862d80fdb84ab8349bdcc7cc88abbad0322ca1095@group.calendar.google.com">
+                <a onclick="logToAnalytics('ger.wolfsburg')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4072933c31e54ea96ea8b68862d80fdb84ab8349bdcc7cc88abbad0322ca1095@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>
             </li>
         
             <li class="item-card">
-                <img class="item-logo" src="https://secure.cache.images.core.optasports.com/soccer/teams/150x150/680.png" alt="Wolverhampton Image">
-                <h2>Wolverhampton</h2>
-                <a onclick="logToAnalytics('680')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4fba54f8bb3e79ffe0d30a87166660f8a71c5103f5bd4f9d16561638740a6d74@group.calendar.google.com">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/380.png" alt="Wolverhampton Wanderers Image">
+                <h2>Wolverhampton Wanderers</h2>
+                <a onclick="logToAnalytics('eng.wolverhampton')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4fba54f8bb3e79ffe0d30a87166660f8a71c5103f5bd4f9d16561638740a6d74@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/aut.png" alt="Áustria Image">
+                <h2>Áustria</h2>
+                <a onclick="logToAnalytics('aut')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=1d3b7c99f0af44315ca29247c1f9ec0d603086cdab90171f815bf270a808e4dd@group.calendar.google.com">
                     <img src="/assets/calendar.svg"/>
                     Salvar
                 </a>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier League</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/assets/style.css" rel="stylesheet">
+    <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+</head>
+<body>
+    <div class="app-bar">
+        <a href="/">
+            <img class="back-button" src="/assets/arrow-left.svg" />
+        </a>
+        <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
+    </div>
+    <div class="container">
+        <h1>Premier League</h1>
+        <ul id="team-list">
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/349.png" alt="AFC Bournemouth Image">
+                <h2>AFC Bournemouth</h2>
+                <a onclick="logToAnalytics('eng.bournemouth')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4e16896c47ff85daca1217fbcc589c9e561a671b237f82d4d18279553eb3f1ae@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/359.png" alt="Arsenal Image">
+                <h2>Arsenal</h2>
+                <a onclick="logToAnalytics('eng.arsenal')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=j215re7udmlpqh7vh6jaf2m8qo@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/362.png" alt="Aston Villa Image">
+                <h2>Aston Villa</h2>
+                <a onclick="logToAnalytics('eng.aston_villa')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e5c6271fa4ffdaa2f5193f3441c96fe0de61b80f511732018e471b0a1e5e8fc8@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/337.png" alt="Brentford Image">
+                <h2>Brentford</h2>
+                <a onclick="logToAnalytics('eng.brentford')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d5b2c01bf076ef58de62c870a3004a081bb1706bc562d5ccd015efecad85587d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/331.png" alt="Brighton & Hove Albion Image">
+                <h2>Brighton & Hove Albion</h2>
+                <a onclick="logToAnalytics('eng.brighton')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=cfd9f0179b6fea3405d9d0d63210c1ab3783065eb78706e1b3fcf1fe22842793@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/363.png" alt="Chelsea Image">
+                <h2>Chelsea</h2>
+                <a onclick="logToAnalytics('eng.chelsea')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8876f7eb140ed5357cb761f54530f310a88a4c871a722603959b35eb256899ac@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/384.png" alt="Crystal Palace Image">
+                <h2>Crystal Palace</h2>
+                <a onclick="logToAnalytics('eng.crystal_palace')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8e0e995badf12c4192d125b4db1543dd17a3ae50775e0418865dce15e910ef7d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/368.png" alt="Everton Image">
+                <h2>Everton</h2>
+                <a onclick="logToAnalytics('eng.everton')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e0ba40f96d8b62eb4f5ddbeb80825c7e538973254a2ab658ad664af9b330aacf@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/370.png" alt="Fulham Image">
+                <h2>Fulham</h2>
+                <a onclick="logToAnalytics('eng.fulham')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3f3874e2980d18c7638d58b7dd24561b4bc7f25b10ac20c3fa9f165404a1baf8@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/373.png" alt="Ipswich Town Image">
+                <h2>Ipswich Town</h2>
+                <a onclick="logToAnalytics('eng.ipswich')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d9984f7d0ea2d34f16fdd2cb9812a405785377efd2cc78c77106e75bc13ab943@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/375.png" alt="Leicester City Image">
+                <h2>Leicester City</h2>
+                <a onclick="logToAnalytics('eng.leicester')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6ba15752c66e2cc8de38662cc3d6cd7120426e55fadbf5715ff8472ad49089b0@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/364.png" alt="Liverpool Image">
+                <h2>Liverpool</h2>
+                <a onclick="logToAnalytics('eng.liverpool')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=711b8b1ea7e1b0e44f1232acd06c0a6cfb60db747097b1c72160fc4c3f53d573@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/382.png" alt="Manchester City Image">
+                <h2>Manchester City</h2>
+                <a onclick="logToAnalytics('eng.man_city')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=3f542ceec572e17159566f20f86000a24d809d8b0c9d50a3285709bfa321b664@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/360.png" alt="Manchester United Image">
+                <h2>Manchester United</h2>
+                <a onclick="logToAnalytics('eng.man_utd')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=458c5a86ce7fee85e45567edb042330fcb07b3358aa8c37587fb4ad907e0c546@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/361.png" alt="Newcastle United Image">
+                <h2>Newcastle United</h2>
+                <a onclick="logToAnalytics('eng.newcastle')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=74c84cdfda250bc909f480d8e43cfc02cba93f73949fbaf5c54f8599bc600856@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/393.png" alt="Nottingham Forest Image">
+                <h2>Nottingham Forest</h2>
+                <a onclick="logToAnalytics('eng.nottm_forest')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e5c107e3561c0cccccf47bd108203aa59f8bf7e96e696348ae3d361b527574d8@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/376.png" alt="Southampton Image">
+                <h2>Southampton</h2>
+                <a onclick="logToAnalytics('eng.southampton')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=215515c57728bade9c2734b3624508720a0e079064f155144a6abbce7de0c7f7@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/367.png" alt="Tottenham Hotspur Image">
+                <h2>Tottenham Hotspur</h2>
+                <a onclick="logToAnalytics('eng.tottenham')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ff839c84acf9d932c6236b4ffd6faacb14e0ec6ed91b1e293c3c64a398c204a6@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/371.png" alt="West Ham United Image">
+                <h2>West Ham United</h2>
+                <a onclick="logToAnalytics('eng.west_ham')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=371c0861915ee911be533de7c662b2b8dc10654f5b9497ed8cb5b7f323870a43@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/380.png" alt="Wolverhampton Wanderers Image">
+                <h2>Wolverhampton Wanderers</h2>
+                <a onclick="logToAnalytics('eng.wolverhampton')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=4fba54f8bb3e79ffe0d30a87166660f8a71c5103f5bd4f9d16561638740a6d74@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+    <footer>
+        <a class="social-media-button" href="https://github.com/collbreno/fut-calendar">
+            <img class="social-media-logo" src="/assets/github.svg"/>
+        </a>
+        <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
+    </footer>
+    <script>
+        function logToAnalytics(teamId) {
+            firebase.analytics().logEvent('calendar_click', { 'team_id': teamId })
+        }
+
+        function filterList() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("team-list");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                h2 = li[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            firebase.analytics();
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    </script>
+</body>
+</html>

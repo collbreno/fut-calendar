@@ -68,7 +68,7 @@ h1 {
     color: #333;
     text-align: center;
     margin-top: 0;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 700;
 }
 ul {
@@ -76,8 +76,8 @@ ul {
     padding: 0;
 }
 .item-card {
-    margin-bottom: 20px;
-    padding: 10px 20px;
+    margin-bottom: 10px;
+    padding: 8px 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -90,15 +90,15 @@ ul {
 }
 h2 {
     color: #333;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     flex-grow: 1;
     margin: 0px 20px;
 }
 .item-logo {
     width: 100%;
-    max-height: 80px;
-    max-width: 80px;
+    max-height: 60px;
+    max-width: 60px;
     object-fit: contain;
     display: block;
     padding: 0px;
@@ -132,11 +132,11 @@ h2 {
 }
 @media screen and (max-width: 600px) {
     .item-logo {
-        max-height: 48px;
-        max-width: 48px;
+        max-height: 42px;
+        max-width: 42px;
     }
     h2 {
-        font-size: 18px;
+        font-size: 16px;
     }
     .app-bar {
         height: 56px;

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serie A</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/assets/style.css" rel="stylesheet">
+    <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
+    <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/init.js?useEmulator=false"></script>
+</head>
+<body>
+    <div class="app-bar">
+        <a href="/">
+            <img class="back-button" src="/assets/arrow-left.svg" />
+        </a>
+        <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
+    </div>
+    <div class="container">
+        <h1>Serie A</h1>
+        <ul id="team-list">
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/103.png" alt="AC Milan Image">
+                <h2>AC Milan</h2>
+                <a onclick="logToAnalytics('ita.ac_milan')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fa054ee0f6a5dcc113cdd689a736cb01b62769afdf414777c81aa36aefb9b748@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/104.png" alt="AS Roma Image">
+                <h2>AS Roma</h2>
+                <a onclick="logToAnalytics('ita.as_roma')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=6a6d5a763abc30ea32a8f72db057a97978af9e5a5ea5298ca3e31a5ec1474b5d@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/105.png" alt="Atalanta Image">
+                <h2>Atalanta</h2>
+                <a onclick="logToAnalytics('ita.atalanta')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e7a2866c3e9de47dd05540753f9e2528040b9f91d38fac0a48f0b2c4b23219d4@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/107.png" alt="Bolonha Image">
+                <h2>Bolonha</h2>
+                <a onclick="logToAnalytics('ita.bologna')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8710e8f665a0077876dd63e1f5726b8fd35b819f281bba323fd4a83c62ffe4a2@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2925.png" alt="Cagliari Image">
+                <h2>Cagliari</h2>
+                <a onclick="logToAnalytics('ita.cagliari')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=c6d524a3c0684833ff39aee0024ff2925e691080367c60a54e3357bf31aa04dc@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2572.png" alt="Como Image">
+                <h2>Como</h2>
+                <a onclick="logToAnalytics('ita.como')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7d4e76e75144f41dcabc52ba404643213fc2510a2498677f619c276c67a5f2cb@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/2574.png" alt="Empoli Image">
+                <h2>Empoli</h2>
+                <a onclick="logToAnalytics('ita.empoli')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7c189b59361cb12007cec3450abd61b179a12b6cf1c7bbb14586752732cb8390@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/109.png" alt="Fiorentina Image">
+                <h2>Fiorentina</h2>
+                <a onclick="logToAnalytics('ita.fiorentina')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=2384dfce7830ed6645c5504d49461909524a30e2427000467b7fa28cfe512857@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/3263.png" alt="Genoa Image">
+                <h2>Genoa</h2>
+                <a onclick="logToAnalytics('ita.genoa')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=8deffdfa6b034224e5b4d3c09d07ba81bb0c93ca9b3732484c683a542f206ccb@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/119.png" alt="Hellas Verona Image">
+                <h2>Hellas Verona</h2>
+                <a onclick="logToAnalytics('ita.verona')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=ab1ba5fdd73373a2c7f4138603d32d2bf0e95a050fbe36c97e672d44d3d172a4@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/110.png" alt="Internazionale Image">
+                <h2>Internazionale</h2>
+                <a onclick="logToAnalytics('ita.inter_milan')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f3caaf173c700863d0c9536ac4fd2feecd95cf2441ad0aee81e0fc91f0df3312@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/111.png" alt="Juventus Image">
+                <h2>Juventus</h2>
+                <a onclick="logToAnalytics('ita.juventus')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a7919a26b69d170955669fa5df97eba8b363fb2fbd5ab46cf3c2c035a9441f80@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/113.png" alt="Lecce Image">
+                <h2>Lecce</h2>
+                <a onclick="logToAnalytics('ita.lecce')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=dc4b6b67e0e0067c0504fb45b519812a04eed2fa3f4a92e4249044fa275dcb1f@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/112.png" alt="Lázio Image">
+                <h2>Lázio</h2>
+                <a onclick="logToAnalytics('ita.lazio_rome')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=e787bc797cf0474dd72e438dd80e4a06a60edeb185f54819a2d932e4fce57a4c@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/4007.png" alt="Monza Image">
+                <h2>Monza</h2>
+                <a onclick="logToAnalytics('ita.monza')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=9f2e4f60ca7771ac96a16394b4141a712f39fe7c69cf865cabd71b931820dbbf@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/114.png" alt="Napoli Image">
+                <h2>Napoli</h2>
+                <a onclick="logToAnalytics('ita.napoli')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=afd0738a29d8a8824b6a7a67dc03c87f24c189de7b008b7e591bc4f115a62768@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/115.png" alt="Parma Image">
+                <h2>Parma</h2>
+                <a onclick="logToAnalytics('ita.parma')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=69b9049b8fe812810ace8a88f2f3ac14b25c645de0c126783cd489e7333081a0@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/239.png" alt="Torino Image">
+                <h2>Torino</h2>
+                <a onclick="logToAnalytics('ita.torino')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5499fc1d88c98487a12e3ecadffc654b19e2d640609309b4b516ac95a4a84d38@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/118.png" alt="Udinese Image">
+                <h2>Udinese</h2>
+                <a onclick="logToAnalytics('ita.udinese')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a50ab7db0dcb15734e3fd327a818d5bed0645e8d25347b8be399e5bbe5c190ce@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+            <li class="item-card">
+                <img class="item-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/17530.png" alt="Venezia Image">
+                <h2>Venezia</h2>
+                <a onclick="logToAnalytics('f.b.c_unione_venezia')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=d5eb78b33799517449f217b3a509e454f24727fa5344079d2fa34bb37749d51c@group.calendar.google.com">
+                    <img src="/assets/calendar.svg"/>
+                    Salvar
+                </a>
+            </li>
+        
+        </ul>
+    </div>
+    <footer>
+        <a class="social-media-button" href="https://github.com/collbreno/fut-calendar">
+            <img class="social-media-logo" src="/assets/github.svg"/>
+        </a>
+        <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
+    </footer>
+    <script>
+        function logToAnalytics(teamId) {
+            firebase.analytics().logEvent('calendar_click', { 'team_id': teamId })
+        }
+
+        function filterList() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('search-input');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("team-list");
+            li = ul.getElementsByTagName('li');
+
+            for (i = 0; i < li.length; i++) {
+                h2 = li[i].getElementsByTagName("h2")[0];
+                txtValue = h2.textContent || h2.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            firebase.analytics();
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth',
+                    'database',
+                    'firestore',
+                    'functions',
+                    'messaging',
+                    'storage',
+                    'analytics',
+                    'remoteConfig',
+                    'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                console.log(`Firebase SDK loaded with ${features.join(', ')}`);
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    </script>
+</body>
+</html>

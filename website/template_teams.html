@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ competition }}</title>
+    <title>{{ competition_name }}</title>
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="/assets/style.css" rel="stylesheet">
@@ -19,7 +19,7 @@
         <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
     </div>
     <div class="container">
-        <h1>{{ competition }}</h1>
+        <h1>{{ competition_name }}</h1>
         <ul id="team-list">
         {% for team in list %}
             <li class="item-card">

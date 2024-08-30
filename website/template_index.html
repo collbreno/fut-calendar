@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://futcalendar.web.app">
     <meta property="og:title" content="Calendários de futebol">
-    <meta property="og:description" content="Copa América e Eurocopa disponíveis!">
+    <meta property="og:description" content="Times do Brasil e Europa!">
     <meta property="og:image" content="https://futcalendar.web.app/assets/preview.png">
     <meta property="og:image:width" content="1079">
     <meta property="og:image:height" content="833">
@@ -15,7 +16,7 @@
     <meta name="twitter:site" content="@collbreno">
     <meta name="twitter:url" content="https://futcalendar.web.app">
     <meta name="twitter:title" content="Calendários de futebol">
-    <meta name="twitter:description" content="Copa América e Eurocopa disponíveis!">
+    <meta name="twitter:description" content="Times do Brasil e Europa!">
     <meta name="twitter:image" content="https://futcalendar.web.app/assets/preview.png">
 
     <title>Home</title>
@@ -28,9 +29,9 @@
 </head>
 <body>
     <div class="container">
-        <h1>Competições</h1>
+        <h1>Calendários de Competições</h1>
         <ul id="competition-list">
-        {% for competition in espn_competitions %}
+        {% for competition in competition_calendars %}
             <li class="item-card">
                 <img class="item-logo" src="{{ competition.image_url }}" alt="{{ competition.name }} Image">
                 <h2>{{ competition.name }}</h2>
@@ -43,9 +44,9 @@
         </ul>
     </div>
     <div class="container">
-        <h1>Times</h1>
+        <h1>Calendários de Times e Seleções</h1>
         <ul id="competition-list">
-        {% for competition in sw_competitions %}
+        {% for competition in competitions %}
             <a class="card-link" href="{{ competition.link }}">
                 <li class="item-card">
                     <img class="item-logo" src="{{ competition.image_url }}" alt="{{ competition.name }} Image">

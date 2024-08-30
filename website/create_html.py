@@ -5,9 +5,6 @@ from jinja2 import Environment, FileSystemLoader
 from dataclasses import dataclass, asdict
 import os
 
-DIST_FOLDER = 'dist/'
-TEAMS_FOLDER = DIST_FOLDER+'teams/'
-
 @dataclass
 class Item:
     image_url: str
@@ -18,30 +15,40 @@ class Item:
 def __get_calendar_url(calendar_id: str) -> str:
     return f'https://calendar.google.com/calendar/u/0/r?cid={calendar_id}'
 
-def __get_image_url(soccerway_id: str) -> str :
-    return f'https://secure.cache.images.core.optasports.com/soccer/teams/150x150/{soccerway_id}.png'
+# def __sort_competitions(competitions: list[dict]):
+#     new_list = []
+#     for c in competitions:
+#         if c['id'] == 'conmebol.america':
+#             new_list.append(c)
+#     for c in competitions:
+#         if c['id'] == 'uefa.euro':
+#             new_list.append(c)
+#     for c in competitions:
+#         if c['id'] != 'uefa.euro' and c['id'] != 'conmebol.america':
+#             new_list.append(c)
+#     return new_list
 
-
-def __generate_teams_html(competition_name, refs: list[DocumentReference], path):
+def __generate_teams_html(item: Item, refs: list[DocumentReference]):
     teams = []
     for team_ref in refs:
         doc = team_ref.get().to_dict()
         name = doc['name']
-        if doc.get('flag') is not None:
-            name += f' ({doc.get('flag')})'
+        flag = doc.get('flag')
+        if flag is not None and len(flag) > 0:
+            name += f' ({flag})'
         teams.append(asdict(Item(
             name=name,
-            image_url=doc.get('image_url', __get_image_url(team_ref.id)),
+            image_url=doc.get('image_url'),
             link=__get_calendar_url(doc['calendar_id']),
             id=team_ref.id
         )))
     teams.sort(key=lambda x: x['name'])
     env = Environment(loader=FileSystemLoader('.'))
     template = env.get_template('template_teams.html')
-    html_output = template.render(list=teams, competition=competition_name)
+    html_output = template.render(list=teams, competition_name=item.name)
 
     # Write HTML output to a file
-    with open(f'{TEAMS_FOLDER}{path}.html', 'w', encoding='utf-8') as file:
+    with open(f'dist{item.link}.html', 'w', encoding='utf-8') as file:
         file.write(html_output)
 
 
@@ -49,48 +56,50 @@ if __name__ == '__main__':
     firebase_admin.initialize_app()
     db = firestore.client()
 
-    espn_competitions = []
-    sw_competitions = []
+    competition_calendars = []
+    competitions = []
 
-    if not os.path.exists(TEAMS_FOLDER):
-        os.mkdir(TEAMS_FOLDER)
+    if not os.path.exists('dist/teams'):
+        os.mkdir('dist/teams')
 
-    all_teams = 'Todos os times'
-    sw_competitions.append(asdict(Item(
+    all_teams = Item(
+        id='all',
         link='/teams/all',
-        name=all_teams,
-        image_url='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Soccerball.svg/2048px-Soccerball.svg.png',
-    )))
-    team_refs: list[DocumentReference] = db.collection('teams').list_documents()
-    __generate_teams_html(all_teams, team_refs, 'all')
+        name='Todos os Times e Seleções',
+        image_url='https://png.pngtree.com/png-vector/20221206/ourmid/pngtree-world-earth-logo-vector-design-png-image_6514310.png',
+    )
+    competitions.append(all_teams)
+    team_refs: list[DocumentReference] = db.collection('espn_teams').list_documents()
+    __generate_teams_html(all_teams, team_refs)
 
-    competitions: list[DocumentReference] = list(db.collection('competitions').list_documents())
+    competition_refs: list[DocumentReference] = list(db.collection('competitions').list_documents())
 
-    for competition_ref in competitions:
+    for competition_ref in competition_refs:
         competition = competition_ref.get().to_dict()
         if 'teams' in competition:
-            sw_competitions.append(asdict(Item(
+            item = Item(
                 link=f'/teams/{competition_ref.id}',
                 name=competition['name'],
                 image_url=competition['image_url'],
                 id=competition_ref.id,
-            )))
-            __generate_teams_html(competition['name'], competition['teams'], competition_ref.id)
-        else:
-            espn_competitions.append(asdict(Item(
+            )
+            competitions.append(item)
+            __generate_teams_html(item, competition['teams'])
+        if 'calendar_id' in competition and not competition.get('disabled', False):
+            competition_calendars.append(Item(
                 link=__get_calendar_url(competition['calendar_id']),
                 name=competition['name'],
                 image_url=competition['image_url'],
                 id=competition_ref.id,
-            )))
+            ))
 
 
     env = Environment(loader=FileSystemLoader('.'))
-    competitions_template = env.get_template('template_competitions.html')
+    competitions_template = env.get_template('template_index.html')
     html_output = competitions_template.render(
-        sw_competitions=sw_competitions, 
-        espn_competitions=espn_competitions,
+        competition_calendars=list(map(asdict, competition_calendars)), 
+        competitions=list(map(asdict, competitions)),
     )
 
-    with open(DIST_FOLDER+'index.html', 'w', encoding='utf-8') as file:
+    with open('dist/index.html', 'w', encoding='utf-8') as file:
         file.write(html_output)
