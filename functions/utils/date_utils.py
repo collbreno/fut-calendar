@@ -22,6 +22,10 @@ class DateUtils:
         return datetime.strptime(str_date, "%Y-%m-%dT%H:%M%z").astimezone(ZoneInfo(LOCAL_TIME_ZONE))
     
     @staticmethod
+    def now() -> datetime:
+        return datetime.now(ZoneInfo(LOCAL_TIME_ZONE))
+    
+    @staticmethod
     def get_datetime_from_timestamp(ts: str) -> datetime:
         # MAY NOT WORK WHEN RUNNING IN GOOGLE CLOUD
         local_tz = ZoneInfo(LOCAL_TIME_ZONE)

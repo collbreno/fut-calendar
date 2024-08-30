@@ -42,7 +42,7 @@ class EspnCompetitionScraper:
         
     def __get_description(self, home: dict, away: dict, competition: str) -> str:
         if self.mapper is None:
-            return competition
+            return f'{home['displayName']} x {away['displayName']}\n{competition}'
         else:
             return self.mapper.get_description(
                 home_id=home['id'], 
@@ -56,7 +56,12 @@ class EspnCompetitionScraper:
         json = response.json()
         start_date = json['eventDate']['dates'][0]
         end_date = json['eventDate']['dates'][-1]
-        return f'{self.__format_date(start_date)}-{self.__format_date(end_date)}'
+        return self.__format_date_range(start_date, end_date)
     
-    def __format_date(self, str_date):
-        return DateUtils.get_datetime_from_espn_api(str_date).strftime('%Y%m%d')
+    def __format_date_range(self, str_start_date, str_end_date):
+        today = DateUtils.now()
+        start_date = DateUtils.get_datetime_from_espn_api(str_start_date)
+        new_start_date = today if today > start_date else start_date
+        f_start_date = new_start_date.strftime('%Y%m%d')
+        f_end_date = DateUtils.get_datetime_from_espn_api(str_end_date).strftime('%Y%m%d')
+        return f'{f_start_date}-{f_end_date}'

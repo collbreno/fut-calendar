@@ -42,7 +42,7 @@ class EspnTeamScraper:
         
     def __get_description(self, home: dict, away: dict, competition: str) -> str:
         if self.mapper is None:
-            return competition
+            return f'{home['displayName']} x {away['displayName']}\n{competition}'
         else:
             return self.mapper.get_description(
                 home_id=home['id'], 

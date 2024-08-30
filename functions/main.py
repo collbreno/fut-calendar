@@ -21,18 +21,20 @@ app = initialize_app()
 @pubsub_fn.on_message_published(topic='run-all-scrapers')
 def run_all(event: pubsub_fn.CloudEvent[pubsub_fn.MessagePublishedData]):
     client: Client = firestore.client()
-    teams: list[DocumentSnapshot] = client.collection('teams').get()
-    for team in teams:
-        client.document(f'teams/{team.id}').update({
-            'last_update': datetime.now()
-        })
-        logger.info(f'{team.id} updated!')
+    espn_teams: list[DocumentSnapshot] = client.collection('espn_teams').get()
+    for team in espn_teams:
+        if not team.to_dict().get('disabled', False):
+            client.document(f'espn_teams/{team.id}').update({
+                'last_update': datetime.now()
+            })
+            logger.info(f'{team.id} updated!')
     competitions: list[DocumentSnapshot] = client.collection('competitions').get()
     for competition in competitions:
-        client.document(f'competitions/{competition.id}').update({
-            'last_update': datetime.now()
-        })
-        logger.info(f'{competition.id} updated!')
+        if not competition.to_dict().get('disabled', False):
+            client.document(f'competitions/{competition.id}').update({
+                'last_update': datetime.now()
+            })
+            logger.info(f'{competition.id} updated!')
 
 @on_document_written(document='teams/{team}')
 def run_scraper(event: Event[Change[DocumentSnapshot]]) -> https_fn.Response:
