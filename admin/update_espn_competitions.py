@@ -9,11 +9,11 @@ if __name__ == '__main__':
     calendar_api = CalendarOAuthApi()
     creator = EspnCompetitionCreator(db=db, calendar_api=calendar_api)
     creator.update(
-        slug='fifa.olympics', 
+        slug='bra.1', 
         create_calendar=True,
-        create_maps=True,
-        create_teams=False, 
-        flag='Fem', 
-        use_mapper=True,
+        create_teams=True, 
+        create_maps=False,
+        use_mapper=False,
+        flag=None, 
     )
     # creator.update('uefa.euro')

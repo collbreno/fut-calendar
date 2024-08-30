@@ -7,7 +7,7 @@ from services.calendar_creator import CalendarCreator
 class EspnMigrator:
     def __init__(self, db: Client, calendar_api: CalendarOAuthApi) -> None:
         self.db = db
-        self.calendar_creator = CalendarCreator(db, calendar_api)
+        self.calendar_creator = CalendarCreator(calendar_api)
 
     def migrate(self, espn_team: EspnTeam, soccerway_id: str):
         espn_doc = self.db.document(f'espn_teams/{espn_team.slug}')
@@ -19,7 +19,10 @@ class EspnMigrator:
             if sw_doc.exists:
                 data['calendar_id'] = sw_doc.to_dict()['calendar_id']
             else: 
-                data['calendar_id'] = self.calendar_creator.create_calendar(espn_team)
+                data['calendar_id'] = self.calendar_creator.create_calendar(
+                    name=espn_team.name, 
+                    flag=espn_team.flag
+                )
             data['use_mapper'] = False
             espn_doc.set(data)
             print(f'Added {espn_team.slug} to database!')
