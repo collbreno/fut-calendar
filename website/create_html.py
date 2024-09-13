@@ -76,7 +76,7 @@ if __name__ == '__main__':
 
     for competition_ref in competition_refs:
         competition = competition_ref.get().to_dict()
-        if 'teams' in competition:
+        if 'teams' in competition and not competition.get('disabled', False):
             item = Item(
                 link=f'/teams/{competition_ref.id}',
                 name=competition['name'],
