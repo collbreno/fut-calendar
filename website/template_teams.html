@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ competition_name }}</title>
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="/assets/style.css" rel="stylesheet">
+    <link href="/assets/style.css?v=2" rel="stylesheet">
     <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
     <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=false"></script>
 </head>
+
 <body>
     <div class="app-bar">
         <a href="/">
@@ -21,21 +23,23 @@
     <div class="container">
         <h1>{{ competition_name }}</h1>
         <ul id="team-list">
-        {% for team in list %}
-            <li class="item-card">
-                <img class="item-logo" src="{{ team.image_url }}" alt="{{ team.name }} Image">
-                <h2>{{ team.name }}</h2>
-                <a onclick="logToAnalytics('{{ team.id }}')" class="calendar-button" href="{{ team.link }}">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            {% for team in list %}
+            <li>
+                <a onclick="logToAnalytics('{{ team.id }}')" class="item-card" href="{{ team.link }}">
+                    <img class="item-logo" src="{{ team.image_url }}" alt="{{ team.name }} Image">
+                    <h2>{{ team.name }}</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        {% endfor %}
+            {% endfor %}
         </ul>
     </div>
     <footer>
         <a class="social-media-button" href="https://github.com/collbreno/fut-calendar">
-            <img class="social-media-logo" src="/assets/github.svg"/>
+            <img class="social-media-logo" src="/assets/github.svg" />
         </a>
         <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
     </footer>
@@ -84,4 +88,5 @@
         });
     </script>
 </body>
+
 </html>

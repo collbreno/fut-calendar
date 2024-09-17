@@ -58,15 +58,18 @@ footer p {
 }
 .container {
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 h1 {
     color: #333;
-    text-align: center;
     margin-top: 0;
     font-size: 20px;
     font-weight: 700;
@@ -74,36 +77,49 @@ h1 {
 ul {
     list-style-type: none;
     padding: 0;
-}
-.item-card {
-    margin-bottom: 10px;
-    padding: 8px 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    flex-wrap: wrap;
 }
-.card-link {
+.item-card {
     text-decoration: none;
+    border-radius: 8px;
+    padding-top: 10px;
+    width: 120px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+}
+li {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
 }
 h2 {
     color: #333;
     font-size: 18px;
     font-weight: 700;
     flex-grow: 1;
-    margin: 0px 20px;
+    margin: 10px 20px;
+    text-align: center;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
 }
 .item-logo {
-    width: 100%;
     max-height: 60px;
     max-width: 60px;
     object-fit: contain;
-    display: block;
     padding: 0px;
 }
 .calendar-button {
+    width: 100%;
+    box-sizing: border-box;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -111,11 +127,11 @@ h2 {
     height: 36px;
     font-size: 14px;
     font-weight: 700;
-    border-radius: 4px;
-    cursor: pointer;
+    border-radius: 0  0 8px 8px;
     text-decoration: none;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     align-items: center;
 }
 .card-arrow {
@@ -127,8 +143,8 @@ h2 {
     height: 18px;
     width: 18px;
 }
-.calendar-button:hover {
-    background-color: #0056b3;
+.item-card:hover {
+    background-color: #d0d0d0;
 }
 @media screen and (max-width: 600px) {
     .item-logo {
@@ -144,5 +160,8 @@ h2 {
     .container {
         padding: 10px;
         margin: 20px 5px;
+    }
+    .item-card {
+        width: 100px;
     }
 }

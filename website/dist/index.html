@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,164 +23,197 @@
     <title>Home</title>
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="/assets/style.css" rel="stylesheet">
+    <link href="/assets/style.css?v=2" rel="stylesheet">
     <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
     <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=false"></script>
 </head>
+
 <body>
     <div class="container">
         <h1>Calendários de Competições</h1>
         <ul id="competition-list">
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/85.png" alt="Brasileirão Image">
-                <h2>Brasileirão</h2>
-                <a onclick="logToAnalytics('bra.1')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=7516a930254413efdc362b4610b49aa7bfa2fa34738b9d780621a33f1cfc9906@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            
+            <li>
+                <a onclick="logToAnalytics('bra.1')" class="item-card" href="https://www.google.com/calendar?cid=7516a930254413efdc362b4610b49aa7bfa2fa34738b9d780621a33f1cfc9906@group.calendar.google.com">
+                    <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/85.png" alt="Brasileirão Image">
+                    <h2>Brasileirão</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/528.png" alt="Copa do Brasil Image">
-                <h2>Copa do Brasil</h2>
-                <a onclick="logToAnalytics('bra.copa_do_brazil')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=fae1e04b0afcff3f8381d9fff8b878adc3a5a0f7a4dd91fce6d2e1e393127d8d@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            
+            <li>
+                <a onclick="logToAnalytics('bra.copa_do_brazil')" class="item-card" href="https://www.google.com/calendar?cid=fae1e04b0afcff3f8381d9fff8b878adc3a5a0f7a4dd91fce6d2e1e393127d8d@group.calendar.google.com">
+                    <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/528.png" alt="Copa do Brasil Image">
+                    <h2>Copa do Brasil</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/58.png" alt="CONMEBOL Libertadores Image">
-                <h2>CONMEBOL Libertadores</h2>
-                <a onclick="logToAnalytics('conmebol.libertadores')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=60cd8e113795dfcf97c284b36f10d0689d95a4920b33604f0d6ece29f704ccdc@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            
+            <li>
+                <a onclick="logToAnalytics('conmebol.libertadores')" class="item-card" href="https://www.google.com/calendar?cid=60cd8e113795dfcf97c284b36f10d0689d95a4920b33604f0d6ece29f704ccdc@group.calendar.google.com">
+                    <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/58.png" alt="Libertadores Image">
+                    <h2>Libertadores</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/23.png" alt="Premier League Image">
-                <h2>Premier League</h2>
-                <a onclick="logToAnalytics('eng.1')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=51f901b89979f28f124c15c1c210b2cc3c06aa4e7f3029e724bc7272b25fc895@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            
+            <li>
+                <a onclick="logToAnalytics('eng.1')" class="item-card" href="https://www.google.com/calendar?cid=51f901b89979f28f124c15c1c210b2cc3c06aa4e7f3029e724bc7272b25fc895@group.calendar.google.com">
+                    <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/23.png" alt="Premier League Image">
+                    <h2>Premier League</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/15.png" alt="La Liga Image">
-                <h2>La Liga</h2>
-                <a onclick="logToAnalytics('esp.1')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=5c8b40bb3ceffb2acea5a69583611fdb5d83a4ac0a2110e8b2ca2167027ca6ac@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            
+            <li>
+                <a onclick="logToAnalytics('esp.1')" class="item-card" href="https://www.google.com/calendar?cid=5c8b40bb3ceffb2acea5a69583611fdb5d83a4ac0a2110e8b2ca2167027ca6ac@group.calendar.google.com">
+                    <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/15.png" alt="La Liga Image">
+                    <h2>La Liga</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/9.png" alt="Ligue 1 Image">
-                <h2>Ligue 1</h2>
-                <a onclick="logToAnalytics('fra.1')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=a00b8c93bc76ee0b6d8399a25ae65cfb7132437e0e8e334724470da51fe2bc81@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            
+            <li>
+                <a onclick="logToAnalytics('fra.1')" class="item-card" href="https://www.google.com/calendar?cid=a00b8c93bc76ee0b6d8399a25ae65cfb7132437e0e8e334724470da51fe2bc81@group.calendar.google.com">
+                    <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/9.png" alt="Ligue 1 Image">
+                    <h2>Ligue 1</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/10.png" alt="Bundesliga Image">
-                <h2>Bundesliga</h2>
-                <a onclick="logToAnalytics('ger.1')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=12115eb7f353afe029831c34fed5393d90987ced0e9337da1743089f37bb6562@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            
+            <li>
+                <a onclick="logToAnalytics('ger.1')" class="item-card" href="https://www.google.com/calendar?cid=12115eb7f353afe029831c34fed5393d90987ced0e9337da1743089f37bb6562@group.calendar.google.com">
+                    <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/10.png" alt="Bundesliga Image">
+                    <h2>Bundesliga</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/12.png" alt="Serie A Image">
-                <h2>Serie A</h2>
-                <a onclick="logToAnalytics('ita.1')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=f0fe80ec6ef608b54eff1fdf49a160a962b226f2b57152b4a5f98708682da2c4@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            
+            <li>
+                <a onclick="logToAnalytics('ita.1')" class="item-card" href="https://www.google.com/calendar?cid=f0fe80ec6ef608b54eff1fdf49a160a962b226f2b57152b4a5f98708682da2c4@group.calendar.google.com">
+                    <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/12.png" alt="Serie A Image">
+                    <h2>Serie A</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        
-            <li class="item-card">
-                <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/2.png" alt="UEFA Champions League Image">
-                <h2>UEFA Champions League</h2>
-                <a onclick="logToAnalytics('uefa.champions')" class="calendar-button" href="https://calendar.google.com/calendar/u/0/r?cid=27cf1e44ea9270a48f245b599e3070a9ef13439265e4306e6611d0d610af0408@group.calendar.google.com">
-                    <img src="/assets/calendar.svg"/>
-                    Salvar
+            
+            <li>
+                <a onclick="logToAnalytics('uefa.champions')" class="item-card" href="https://www.google.com/calendar?cid=27cf1e44ea9270a48f245b599e3070a9ef13439265e4306e6611d0d610af0408@group.calendar.google.com">
+                    <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/2.png" alt="Champions League Image">
+                    <h2>Champions League</h2>
+                    <div class="calendar-button">
+                        <img src="/assets/calendar.svg" />
+                        Salvar
+                    </div>
                 </a>
             </li>
-        
+            
         </ul>
     </div>
     <div class="container">
         <h1>Calendários de Times e Seleções</h1>
         <ul id="competition-list">
-        
-            <a class="card-link" href="/teams/all">
-                <li class="item-card">
-                    <img class="item-logo" src="https://png.pngtree.com/png-vector/20221206/ourmid/pngtree-world-earth-logo-vector-design-png-image_6514310.png" alt="Todos os Times e Seleções Image">
-                    <h2>Todos os Times e Seleções</h2>
-                    <img class="card-arrow" src="/assets/right-chevron.svg"/>
-                </li>
-            </a>
-        
-            <a class="card-link" href="/teams/bra.1">
-                <li class="item-card">
+            
+            <li>
+                <a class="item-card" href="/teams/all">
+                    <img class="item-logo" src="https://png.pngtree.com/png-vector/20221206/ourmid/pngtree-world-earth-logo-vector-design-png-image_6514310.png" alt="Todos Image">
+                    <h2>Todos</h2>
+                    <div class="calendar-button">
+                        Ver Times
+                    </div>
+                </a>
+            </li>
+            
+            <li>
+                <a class="item-card" href="/teams/bra.1">
                     <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/85.png" alt="Brasileirão Image">
                     <h2>Brasileirão</h2>
-                    <img class="card-arrow" src="/assets/right-chevron.svg"/>
-                </li>
-            </a>
-        
-            <a class="card-link" href="/teams/eng.1">
-                <li class="item-card">
+                    <div class="calendar-button">
+                        Ver Times
+                    </div>
+                </a>
+            </li>
+            
+            <li>
+                <a class="item-card" href="/teams/eng.1">
                     <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/23.png" alt="Premier League Image">
                     <h2>Premier League</h2>
-                    <img class="card-arrow" src="/assets/right-chevron.svg"/>
-                </li>
-            </a>
-        
-            <a class="card-link" href="/teams/esp.1">
-                <li class="item-card">
+                    <div class="calendar-button">
+                        Ver Times
+                    </div>
+                </a>
+            </li>
+            
+            <li>
+                <a class="item-card" href="/teams/esp.1">
                     <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/15.png" alt="La Liga Image">
                     <h2>La Liga</h2>
-                    <img class="card-arrow" src="/assets/right-chevron.svg"/>
-                </li>
-            </a>
-        
-            <a class="card-link" href="/teams/fra.1">
-                <li class="item-card">
+                    <div class="calendar-button">
+                        Ver Times
+                    </div>
+                </a>
+            </li>
+            
+            <li>
+                <a class="item-card" href="/teams/fra.1">
                     <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/9.png" alt="Ligue 1 Image">
                     <h2>Ligue 1</h2>
-                    <img class="card-arrow" src="/assets/right-chevron.svg"/>
-                </li>
-            </a>
-        
-            <a class="card-link" href="/teams/ger.1">
-                <li class="item-card">
+                    <div class="calendar-button">
+                        Ver Times
+                    </div>
+                </a>
+            </li>
+            
+            <li>
+                <a class="item-card" href="/teams/ger.1">
                     <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/10.png" alt="Bundesliga Image">
                     <h2>Bundesliga</h2>
-                    <img class="card-arrow" src="/assets/right-chevron.svg"/>
-                </li>
-            </a>
-        
-            <a class="card-link" href="/teams/ita.1">
-                <li class="item-card">
+                    <div class="calendar-button">
+                        Ver Times
+                    </div>
+                </a>
+            </li>
+            
+            <li>
+                <a class="item-card" href="/teams/ita.1">
                     <img class="item-logo" src="https://a.espncdn.com/i/leaguelogos/soccer/500/12.png" alt="Serie A Image">
                     <h2>Serie A</h2>
-                    <img class="card-arrow" src="/assets/right-chevron.svg"/>
-                </li>
-            </a>
-        
+                    <div class="calendar-button">
+                        Ver Times
+                    </div>
+                </a>
+            </li>
+            
         </ul>
     </div>
     <footer>
         <a class="social-media-button" href="https://github.com/collbreno/fut-calendar">
-            <img class="social-media-logo" src="/assets/github.svg"/>
+            <img class="social-media-logo" src="/assets/github.svg" />
         </a>
         <p>Desenvolvido por <a class="social-media-link" href="https://github.com/collbreno">@collbreno</a></p>
     </footer>
@@ -210,4 +244,5 @@
         });
     </script>
 </body>
+
 </html>

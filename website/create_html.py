@@ -13,7 +13,7 @@ class Item:
     id: str = ''
 
 def __get_calendar_url(calendar_id: str) -> str:
-    return f'https://calendar.google.com/calendar/u/0/r?cid={calendar_id}'
+    return f'https://www.google.com/calendar?cid={calendar_id}'
 
 # def __sort_competitions(competitions: list[dict]):
 #     new_list = []
@@ -65,7 +65,7 @@ if __name__ == '__main__':
     all_teams = Item(
         id='all',
         link='/teams/all',
-        name='Todos os Times e Seleções',
+        name='Todos',
         image_url='https://png.pngtree.com/png-vector/20221206/ourmid/pngtree-world-earth-logo-vector-design-png-image_6514310.png',
     )
     competitions.append(all_teams)
