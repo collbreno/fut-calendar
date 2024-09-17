@@ -56,9 +56,21 @@ footer p {
     outline: none;
     border: 0px;
 }
+.iphone-popup {
+    margin: 10px auto;
+    background-color: #8a00c2;
+    color: white;
+    display: flex;
+    border-radius: 12px;
+    max-width: fit-content;
+    padding: 10px;
+    text-decoration: none;
+}
+.iphone-popup:hover {
+    background-color: #7600bc;
+}
 .container {
     max-width: 600px;
-    display: flex;
     flex-direction: column;
     align-items: center;
     margin: 20px auto;
@@ -73,6 +85,7 @@ h1 {
     margin-top: 0;
     font-size: 20px;
     font-weight: 700;
+    text-align: center;
 }
 ul {
     list-style-type: none;
@@ -145,6 +158,11 @@ h2 {
 }
 .item-card:hover {
     background-color: #d0d0d0;
+}
+.iphone-help-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
 }
 @media screen and (max-width: 600px) {
     .item-logo {

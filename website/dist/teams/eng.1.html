@@ -7,7 +7,7 @@
     <title>Premier League</title>
     <link rel="icon" type="image/png" href="/assets/logo.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link href="/assets/style.css?v=2" rel="stylesheet">
+    <link href="/assets/style.css?v=3" rel="stylesheet">
     <script defer src="/__/firebase/10.11.1/firebase-app-compat.js"></script>
     <script defer src="/__/firebase/10.11.1/firebase-analytics-compat.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=false"></script>
@@ -20,6 +20,9 @@
         </a>
         <input type="text" id="search-input" onkeyup="filterList()" placeholder="Pesquisar time">
     </div>
+    <a class="iphone-popup" href="/iphone_help">
+        <span>Não funcionou no iPhone? Clique aqui</span>
+    </a>
     <div class="container">
         <h1>Premier League</h1>
         <ul id="team-list">
@@ -276,6 +279,12 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+            if (/android/i.test(userAgent)) {
+                document.getElementsByClassName('iphone-popup')[0].style.display = 'none'
+            }
+
             firebase.analytics();
             try {
                 let app = firebase.app();
