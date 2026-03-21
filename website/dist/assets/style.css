@@ -115,7 +115,7 @@ li {
 }
 h2 {
     color: #333;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     flex-grow: 1;
     margin: 10px 20px;
@@ -170,7 +170,7 @@ h2 {
         max-width: 42px;
     }
     h2 {
-        font-size: 16px;
+        font-size: 13px;
     }
     .app-bar {
         height: 56px;
