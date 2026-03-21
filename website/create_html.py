@@ -15,18 +15,15 @@ class Item:
 def __get_calendar_url(calendar_id: str) -> str:
     return f'https://www.google.com/calendar?cid={calendar_id}'
 
-# def __sort_competitions(competitions: list[dict]):
-#     new_list = []
-#     for c in competitions:
-#         if c['id'] == 'conmebol.america':
-#             new_list.append(c)
-#     for c in competitions:
-#         if c['id'] == 'uefa.euro':
-#             new_list.append(c)
-#     for c in competitions:
-#         if c['id'] != 'uefa.euro' and c['id'] != 'conmebol.america':
-#             new_list.append(c)
-#     return new_list
+def __sort_competitions(competitions: list[Item]):
+    new_list = []
+    for c in competitions:
+        if c.id == 'fifa.world':
+            new_list.append(c)
+    for c in competitions:
+        if c.id != 'fifa.world':
+            new_list.append(c)
+    return new_list
 
 def __generate_teams_html(item: Item, refs: list[DocumentReference]):
     teams = []
@@ -53,6 +50,7 @@ def __generate_teams_html(item: Item, refs: list[DocumentReference]):
 
 
 if __name__ == '__main__':
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = './python_admin_credentials.json'
     firebase_admin.initialize_app()
     db = firestore.client()
 
@@ -93,6 +91,7 @@ if __name__ == '__main__':
                 id=competition_ref.id,
             ))
 
+    competition_calendars = __sort_competitions(competition_calendars)
 
     env = Environment(loader=FileSystemLoader('.'))
     competitions_template = env.get_template('template_index.html')
